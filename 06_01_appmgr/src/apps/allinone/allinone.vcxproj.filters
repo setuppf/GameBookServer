@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\dbmgr\mysql_connector.cpp">
+      <Filter>dbmgr\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dbmgr\mysql_msg.cpp">
+      <Filter>dbmgr\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\login\account.cpp">
+      <Filter>login\account</Filter>
+    </ClCompile>
+    <ClCompile Include="..\login\http_request_account.cpp">
+      <Filter>login\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dbmgr\mysql_base.cpp">
+      <Filter>dbmgr\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dbmgr\mysql_table_update.cpp">
+      <Filter>dbmgr\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\login\login_obj.cpp">
+      <Filter>login\account</Filter>
+    </ClCompile>
+    <ClCompile Include="..\login\login_obj_mgr.cpp">
+      <Filter>login\account</Filter>
+    </ClCompile>
+    <ClCompile Include="..\login\http_request.cpp">
+      <Filter>login\http</Filter>
+    </ClCompile>
+    <ClCompile Include="..\appmgr\login_sync_component.cpp">
+      <Filter>appmgr\login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\appmgr\console_cmd_app.cpp">
+      <Filter>appmgr\console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\appmgr\console_app_component.cpp">
+      <Filter>appmgr\console</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="login">
+      <UniqueIdentifier>{d5dbe439-cc12-4fba-842b-8a5d68fdf192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="login\account">
+      <UniqueIdentifier>{c711f103-f5f9-4832-901a-d21a2f38b13f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="login\http">
+      <UniqueIdentifier>{33418368-007f-4b15-ae39-56f348d6a66d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dbmgr">
+      <UniqueIdentifier>{35d3d243-b873-4376-afd0-327b08c8d48c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dbmgr\mysql">
+      <UniqueIdentifier>{bce5dbce-30bc-44ad-84fa-74f9d4203759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dbmgr\base">
+      <UniqueIdentifier>{af42b823-d72a-4125-8ae9-00406e4e2556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appmgr">
+      <UniqueIdentifier>{56bbc38b-65c9-4f5d-9114-3db1cdc64d09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appmgr\login">
+      <UniqueIdentifier>{e6a25a59-251f-4c55-bf72-bbc7c93a03b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appmgr\console">
+      <UniqueIdentifier>{e377aaa8-a3fe-47cc-8b5f-d46ea387e715}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\dbmgr\mysql_connector.h">
+      <Filter>dbmgr\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\login\account.h">
+      <Filter>login\account</Filter>
+    </ClInclude>
+    <ClInclude Include="..\login\http_request_account.h">
+      <Filter>login\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dbmgr\mysql_base.h">
+      <Filter>dbmgr\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dbmgr\mysql_table_update.h">
+      <Filter>dbmgr\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\login\login_obj.h">
+      <Filter>login\account</Filter>
+    </ClInclude>
+    <ClInclude Include="..\login\login_obj_mgr.h">
+      <Filter>login\account</Filter>
+    </ClInclude>
+    <ClInclude Include="..\login\http_request.h">
+      <Filter>login\http</Filter>
+    </ClInclude>
+    <ClInclude Include="..\appmgr\login_sync_component.h">
+      <Filter>appmgr\login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\appmgr\console_cmd_app.h">
+      <Filter>appmgr\console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\appmgr\console_app_component.h">
+      <Filter>appmgr\console</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

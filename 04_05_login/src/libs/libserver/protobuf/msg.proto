@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package Proto;
+
+///////////////////////////////////////////////////////////////
+
+message CreateComponentParam
+{
+	enum ParamType
+	{
+		Int = 0;
+		String = 1;
+	}
+
+	ParamType type = 1;
+	int32 int_param = 2;
+	string string_param = 3;
+}
+
+message CreateComponent {
+	string class_name = 1;
+	uint64 parent_sn = 2;
+	repeated CreateComponentParam params = 3;
+}
+
+message RemoveComponent {
+	uint64 sn = 1;
+}
+
+///////////////////////////////////////////////////////////////
+
+message AccountCheck {
+	string account = 1;
+	string password = 2;
+}
+
+message AccountCheckRs {
+	enum ReturnCode {
+		ARC_OK = 0;
+		ARC_UNKONWN = 1;
+		ARC_NOT_FOUND_ACCOUNT = 2;
+		ARC_PASSWORD_WRONG = 3;
+		ARC_LOGGING = 4; // ÕýÔÚµÇÂ¼
+		ARC_TIMEOUT = 5; // ³¬Ê±
+	}
+
+	int32 return_code = 1;
+}
+
+message AccountCheckToHttpRs {
+	int32 return_code = 1;	// AccountCheckRs::ReturnCode
+	string account = 2;
+}
+
+message RobotState {
+	string account = 1;
+	int32 state = 2;
+}
+
+message RobotSyncState {
+	repeated RobotState states = 1;
+}
+
+message RobotTestEnd {
+	int32 state = 1;
+}

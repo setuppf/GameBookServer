@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="player">
+      <UniqueIdentifier>{26ad9bf8-bf17-4e40-88bf-bf66cb8951db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world">
+      <UniqueIdentifier>{21a7de3e-9e3e-4293-b646-8bd1838ac988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player\component">
+      <UniqueIdentifier>{246b5249-182c-4ff4-beb6-33005676d029}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{64740ec3-906d-4ba8-ab44-0eb5fda88c6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="player.h">
+      <Filter>player</Filter>
+    </ClInclude>
+    <ClInclude Include="world_base.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="player_component.h">
+      <Filter>player\component</Filter>
+    </ClInclude>
+    <ClInclude Include="player_collector_component.h">
+      <Filter>player</Filter>
+    </ClInclude>
+    <ClInclude Include="player_component_proto_list.h">
+      <Filter>player\component</Filter>
+    </ClInclude>
+    <ClInclude Include="vector3.h">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="player.cpp">
+      <Filter>player</Filter>
+    </ClCompile>
+    <ClCompile Include="world_base.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="player_collector_component.cpp">
+      <Filter>player</Filter>
+    </ClCompile>
+    <ClCompile Include="player_component_proto_list.cpp">
+      <Filter>player\component</Filter>
+    </ClCompile>
+    <ClCompile Include="player_component.cpp">
+      <Filter>player\component</Filter>
+    </ClCompile>
+    <ClCompile Include="vector3.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

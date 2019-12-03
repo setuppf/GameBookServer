@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="world.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world_gather.cpp">
+      <Filter>gather</Filter>
+    </ClCompile>
+    <ClCompile Include="console_cmd_world.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="world_operator_component.cpp">
+      <Filter>world\component</Filter>
+    </ClCompile>
+    <ClCompile Include="player_component_detail.cpp">
+      <Filter>player\component</Filter>
+    </ClCompile>
+    <ClCompile Include="player_manager_component.cpp">
+      <Filter>player\mgr</Filter>
+    </ClCompile>
+    <ClCompile Include="move_component.cpp">
+      <Filter>system\move</Filter>
+    </ClCompile>
+    <ClCompile Include="move_system.cpp">
+      <Filter>system\move</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="space.h" />
+    <ClInclude Include="world.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world_gather.h">
+      <Filter>gather</Filter>
+    </ClInclude>
+    <ClInclude Include="console_cmd_world.h">
+      <Filter>console</Filter>
+    </ClInclude>
+    <ClInclude Include="world_operator_component.h">
+      <Filter>world\component</Filter>
+    </ClInclude>
+    <ClInclude Include="player_component_detail.h">
+      <Filter>player\component</Filter>
+    </ClInclude>
+    <ClInclude Include="player_manager_component.h">
+      <Filter>player\mgr</Filter>
+    </ClInclude>
+    <ClInclude Include="move_component.h">
+      <Filter>system\move</Filter>
+    </ClInclude>
+    <ClInclude Include="move_system.h">
+      <Filter>system\move</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="world">
+      <UniqueIdentifier>{9f4c8233-37c9-43fa-9e66-cc332b74070e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gather">
+      <UniqueIdentifier>{57d850c7-27af-412c-a3b2-e955485d6b6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console">
+      <UniqueIdentifier>{5368c083-f0df-4c72-aa02-598112b975eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player">
+      <UniqueIdentifier>{bea6f651-34ad-43bc-986b-6d76c3589042}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\component">
+      <UniqueIdentifier>{2e202976-6d07-422c-8ad7-42ea25f0c9c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player\component">
+      <UniqueIdentifier>{9b8b4fea-61bf-4be3-8d8e-b671d11c670b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player\mgr">
+      <UniqueIdentifier>{b619116b-f9b7-41ee-8895-7b0e6eba75d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system">
+      <UniqueIdentifier>{693bbb53-d854-4b57-bd17-238ebd335e40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system\move">
+      <UniqueIdentifier>{15d02be9-0187-4a64-9a26-bc5044bf915d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

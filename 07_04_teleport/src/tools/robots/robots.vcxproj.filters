@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="robot.cpp">
+      <Filter>robot</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_state.cpp">
+      <Filter>robot\state</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_state_login.cpp">
+      <Filter>robot\state</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_mgr.cpp">
+      <Filter>robot</Filter>
+    </ClCompile>
+    <ClCompile Include="global_robots.cpp" />
+    <ClCompile Include="robot_console_login.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_console_http.cpp">
+      <Filter>console\http</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_state_http.cpp">
+      <Filter>robot\state</Filter>
+    </ClCompile>
+    <ClCompile Include="test_http_login.cpp">
+      <Filter>console\http</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_state_game.cpp">
+      <Filter>robot\state</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_component_gametoken.cpp">
+      <Filter>robot\component</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_component_login.cpp">
+      <Filter>robot\component</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_collection.cpp">
+      <Filter>robot</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_console_world.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_locator.cpp">
+      <Filter>robot</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="robot.h">
+      <Filter>robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_state.h">
+      <Filter>robot\state</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_state_login.h">
+      <Filter>robot\state</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_mgr.h">
+      <Filter>robot</Filter>
+    </ClInclude>
+    <ClInclude Include="global_robots.h" />
+    <ClInclude Include="robot_console_login.h">
+      <Filter>console</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_console_http.h">
+      <Filter>console\http</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_state_http.h">
+      <Filter>robot\state</Filter>
+    </ClInclude>
+    <ClInclude Include="test_http_login.h">
+      <Filter>console\http</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_state_game.h">
+      <Filter>robot\state</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_component_gametoken.h">
+      <Filter>robot\component</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_component_login.h">
+      <Filter>robot\component</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_collection.h">
+      <Filter>robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_console_world.h">
+      <Filter>console</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_locator.h">
+      <Filter>robot</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="robot">
+      <UniqueIdentifier>{fbb78163-0533-4c5b-8faf-a3eacd0b0b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="robot\state">
+      <UniqueIdentifier>{1744ff06-0391-4906-bc34-0152ea8d7928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console">
+      <UniqueIdentifier>{56350004-25a4-4bdb-9416-37e5e46aca19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console\http">
+      <UniqueIdentifier>{da60f3e2-3315-4cab-af41-374fb329df40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="robot\component">
+      <UniqueIdentifier>{b6ce9876-aa80-4643-acb6-cfc01a92df5b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

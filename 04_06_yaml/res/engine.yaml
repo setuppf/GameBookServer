@@ -1,0 +1,8 @@
+login:
+  thread_num: 0
+  url_login: http://192.168.1.120/member_login_t.php
+  ip: 127.0.0.1
+  port: 5550
+
+robot:
+  thread_num: 0

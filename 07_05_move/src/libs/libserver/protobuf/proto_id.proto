@@ -1,0 +1,141 @@
+syntax = "proto3";
+
+package Proto;
+
+enum MsgId {
+
+	// proto3的枚举，第一个必为0
+	None = 0; 
+
+	MI_NetworkConnect			= 1;	// 请求连接
+	MI_NetworkConnected			= 2;	// 连接成功
+
+	MI_NetworkListen			= 3;	// 网络监听到一个连接
+	MI_NetworkListenKey			= 4;	// 对网络监听进行一个Key值描述
+
+	/*
+	* 物理网络的断开，network通知上层网络关闭事件
+	* 关闭可能是监听，可能是连接，根据协议体数据而定
+	*/
+	MI_NetworkDisconnect		= 10;
+	MI_NetworkDisconnectEx		= 11;
+
+	/*
+	* 逻辑层的断开，上层逻辑发起的主动断开网络的协议 to network
+	* 该协议没有协议体
+	*/
+	MI_NetworkRequestDisconnect	= 20;	// 逻辑层要求断开网络
+
+	MI_RemoveComponent			= 50;	// remove Component
+	MI_CreateComponent			= 51;	// 创建Component
+	MI_CreateSystem				= 52;	// 创建System
+
+	MI_Ping						= 101;
+	MI_AppRegister				= 102;	// app 注册到 mgr
+	MI_AppInfoSync				= 103;  // app 数据同步
+	MI_AppInfoListSync			= 104;  // app 数据同步
+
+	// login
+	C2L_AccountCheck					= 1000;  // 1.验证账号：client to login
+	C2L_AccountCheckRs					= 1001;  //   AccountCheckRs to client
+
+	MI_AccountQueryOnlineToRedis		= 1002;  // 2.验证账号：验证账号之前，向Redis询问是已在其他的Login登录验证账号
+	MI_AccountQueryOnlineToRedisRs		= 1003;
+
+	L2DB_QueryPlayerList	    	= 1010;  // 1.选择角色：PlayerList 
+	L2DB_QueryPlayerListRs		    = 1011;  //   
+
+	L2C_PlayerList                  = 1012;  //
+
+	C2L_CreatePlayer				= 1014;  // 2.选择角色：没有角色，请求创建角色
+	C2L_CreatePlayerRs				= 1015;  //   CreatePlayerRs to client
+
+	L2DB_CreatePlayer			    = 1016;  // 3.选择角色：创建角色ToDB
+	L2DB_CreatePlayerRs             = 1017;  //   CreatePlayerToDB
+
+	C2L_SelectPlayer				= 1018;  // 4.选择角色 SelectPlayer
+	C2L_SelectPlayerRs				= 1019;  // 
+
+	MI_LoginTokenToRedis		    = 1022;	 // 1.请求登录的Token
+	MI_LoginTokenToRedisRs		    = 1023;	 //   GameRequestTokenToRedisRs
+
+	L2C_GameToken               	= 1024;  // 2.将token和Game发送给客户端，GameToken
+
+	// game
+	C2G_LoginByToken				= 1100;	 // 1.登录：客户端请求登录Game
+	C2G_LoginByTokenRs			    = 1101;	 //   LoginByToken
+
+	MI_GameTokenToRedis		        = 1102;	 // 2.登录：Game请求登录的Token
+	MI_GameTokenToRedisRs	        = 1103;	 //   ameRequestTokenToRedis
+
+	G2DB_QueryPlayer	    	    = 1104;  // 
+	G2DB_QueryPlayerRs				= 1105;  // 
+
+	G2C_SyncPlayer					= 1106;	 // 玩家初次整体同步数据
+
+	G2M_RequestWorld				= 1108;  // 进入地图：如果本地没有实例，向AppMgr请求
+	G2S_CreateWorld					= 1109;  // 进入地图，请求创建地图
+
+	MI_Teleport						= 1110;	 // 进入地图：开始跳转，player 设为 只读
+	MI_TeleportAfter				= 1111;  //   TeleportAfter 如果跳转失败，恢复本地player，如果成功，删除本地数据
+
+	G2S_SyncPlayer					= 1112;  // 同步数据到Space
+	G2S_RequestSyncPlayer			= 1113;  // 请求同步数据
+	G2DB_SavePlayer					= 1114;
+	G2S_RemovePlayer				= 1115;
+
+	C2G_EnterWorld		            = 1116;  // 进入地图，玩家请求进入某地图
+
+	G2M_QueryWorld					= 1117;  // 进入地图：如果没有实例，向AppMgr请求
+	G2M_QueryWorldRs				= 1118;
+
+    // space
+	S2C_EnterWorld					= 1501;  // 通知客户端，进入某地图
+	S2G_SyncPlayer					= 1502;  // 同步数据给Game    	
+
+	S2C_RoleAppear					= 1503;		// 玩家出现
+	S2C_RoleDisAppear				= 1504;		// 玩家消失
+
+	C2S_Move						= 1505;	// 玩家移动
+	S2C_Move						= 1506;
+
+    // 
+	MI_BroadcastCreateWorld			= 2001;  // 进入地图，创建地图广播
+	MI_BroadcastCreateWorldProxy	= 2002;  // 进入地图，创建地图Proxy广播
+
+	// Sync
+	MI_WorldSyncToGather		    = 3001;  // world
+	MI_WorldProxySyncToGather	    = 3002;	 // world proxy
+
+	// redis
+	MI_AccountSyncOnlineToRedis		= 4001;  // 设置 account online 标志
+	MI_AccountDeleteOnlineToRedis	= 4002;  // 删除 account online 标志
+
+	MI_PlayerSyncOnlineToRedis		= 4003;  // 设置 account online 标志
+	MI_PlayerDeleteOnlineToRedis	= 4004;  // 删除 account online 标志
+
+	// robot
+	MI_RobotSyncState	= 5001;	// Robot 状态同步到RobotMgr
+    MI_RobotCreate      = 5002; // 请求创建Robot
+
+	// http listen 的请求（外部请求）
+	MI_HttpBegin         = 10000;
+	MI_HttpInnerResponse = 10001; // 响应数据
+	MI_HttpRequestBad    = 10002;
+	MI_HttpRequestLogin	 = 10003;
+
+	MI_HttpEnd           = 10499;
+
+	// http connector 的消息（内部请求，外部返回）
+	MI_HttpOuterRequest      = 10500; // 内部向外请求
+	MI_HttpOuterResponse     = 10501; // 外部响应数据
+
+	// cmd
+	MI_CmdThread        = 20001;
+	MI_CmdApp           = 20002;
+	MI_CmdWorldProxy    = 20003;
+	MI_CmdWorld         = 20004;
+	MI_CmdCreate        = 20005;  // appmgr: the infomation of create
+	MI_CmdEfficiency	= 20006;
+	MI_Efficiency		= 20007;
+}

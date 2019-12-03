@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="entity.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_system.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="test_entity.cpp">
+      <Filter>entity</Filter>
+    </ClCompile>
+    <ClCompile Include="test_c_init.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="test_c_update.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ecs">
+      <UniqueIdentifier>{9519f2c5-5843-4562-a8a2-6871886cae85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity">
+      <UniqueIdentifier>{2b6f551a-052e-48b8-b02e-3fa676e2b814}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component">
+      <UniqueIdentifier>{04fb1e7b-7bfe-4e4b-9e2f-cb26e170b7ba}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="system.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="entity_system.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="test_entity.h">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="test_c_init.h">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="test_c_update.h">
+      <Filter>component</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Proto;
+
+enum MsgId {
+	None = 0; // proto3的枚举，第一个必为0
+	SendData = 1;
+	Over = 2;
+}

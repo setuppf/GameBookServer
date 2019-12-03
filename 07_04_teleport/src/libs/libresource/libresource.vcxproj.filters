@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource_mgr_template.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_base.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_manager.h" />
+    <ClInclude Include="resource_world.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="resource_help.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="resource_base.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_manager.cpp" />
+    <ClCompile Include="resource_world.cpp">
+      <Filter>resource</Filter>
+    </ClCompile>
+    <ClCompile Include="resource_help.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="base">
+      <UniqueIdentifier>{bafb1f2e-86e7-4aa4-8ef8-c5cfb667f9bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{34f981ac-35df-48a8-bb67-c8f489255005}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

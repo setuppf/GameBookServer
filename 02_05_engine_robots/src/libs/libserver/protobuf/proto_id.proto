@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package Proto;
+
+enum MsgId {
+
+	// proto3的枚举，第一个必为0
+	None = 0; 
+
+	MI_NetworkConnect			= 1;	// 网络主动连接成功
+	MI_NetworkListen			= 2;	// 网络监听到一个连接
+
+	/*
+	* 物理网络的断开，network通知上层网络关闭事件
+	* 关闭可能是监听，可能是连接，根据协议体数据而定
+	*/
+	MI_NetworkDisconnect		= 3;
+	MI_NetworkDisconnectEx		= 4;
+
+	/*
+	* 逻辑层的断开，上层逻辑发起的主动断开网络的协议 to network
+	* 该协议没有协议体
+	*/
+	MI_NetworkDisconnectToNet	= 5;	
+
+	MI_Ping						= 101;
+
+	// 登录
+	C2L_AccountCheck					= 1001;  // 1.验证账号：client to login
+	C2L_AccountCheckRs					= 1002;  //   AccountCheckRs to client
+
+	MI_AccountQueryOnlineToRedis		= 1003;  // 2.验证账号：验证账号之前，向Redis询问是已在其他的Login登录验证账号
+	MI_AccountQueryOnlineToRedisRs		= 1004;
+
+	MI_AccountCheckToHttpRs				= 1005;  //   http to account
+
+
+
+	// robot
+	MI_RobotSyncState	= 5001;	// Robot 状态同步到RobotMgr
+
+	// robot test
+	MI_RobotTestBegin	= 5100;	
+	MI_RobotTestEnd		= 5101;	
+}

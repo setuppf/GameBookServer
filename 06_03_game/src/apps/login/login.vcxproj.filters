@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="account.cpp">
+      <Filter>account</Filter>
+    </ClCompile>
+    <ClCompile Include="player_component_account.cpp">
+      <Filter>player</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="account.h">
+      <Filter>account</Filter>
+    </ClInclude>
+    <ClInclude Include="login.h" />
+    <ClInclude Include="player_component_account.h">
+      <Filter>player</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="account">
+      <UniqueIdentifier>{0dfe626d-acb4-43c1-8441-0da017a0ef87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player">
+      <UniqueIdentifier>{0517c336-f3a3-4e81-aa5b-3775bb260e69}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

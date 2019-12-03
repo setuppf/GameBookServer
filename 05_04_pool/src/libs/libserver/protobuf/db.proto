@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package Proto;
+
+// 本文件中的所有结构，都是会存在DB中的
+
+message Vector3 {
+	float x = 1;
+	float y = 2;
+	float z = 3;
+}
+
+enum Gender {
+	none = 0;
+	male = 1;
+	female = 2;
+}
+
+message PlayerBase {
+	Gender gender = 1;
+	int32 level = 2;
+}
+
+// 登录上一次的地图，两种情况
+// 上次离开时，是一个公共地图，那么直接回到公共地图
+// 上次离开时，是从一个副本离开的，如果副本SN还能找到，就再次进入副本
+message LastWorld {
+	int32 world_id = 1;	
+	int64 world_sn = 2;
+	Vector3 position = 3;
+}
+
+message PlayerMisc {
+	LastWorld last_world = 1;	// 公共地图
+	LastWorld last_dungeon = 2;	// 副本地图
+	int32 online_version = 3;	// 在线版本（乐观锁）
+}
+
+message Player {
+	uint64 sn = 1;
+	string name = 2;
+	PlayerBase base = 3;
+	PlayerMisc misc = 4;
+}

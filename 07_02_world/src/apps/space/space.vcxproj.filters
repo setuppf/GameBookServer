@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="world.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world_gather.cpp">
+      <Filter>gather</Filter>
+    </ClCompile>
+    <ClCompile Include="console_cmd_world.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="world_operator_component.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="space.h" />
+    <ClInclude Include="world.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world_gather.h">
+      <Filter>gather</Filter>
+    </ClInclude>
+    <ClInclude Include="console_cmd_world.h">
+      <Filter>console</Filter>
+    </ClInclude>
+    <ClInclude Include="world_operator_component.h">
+      <Filter>world</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="world">
+      <UniqueIdentifier>{9f4c8233-37c9-43fa-9e66-cc332b74070e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gather">
+      <UniqueIdentifier>{57d850c7-27af-412c-a3b2-e955485d6b6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console">
+      <UniqueIdentifier>{5368c083-f0df-4c72-aa02-598112b975eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

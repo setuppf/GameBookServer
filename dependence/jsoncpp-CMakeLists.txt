@@ -1,0 +1,36 @@
+set(JSONCPP_OLDEST_VALIDATED_POLICIES_VERSION "3.8.0")
+set(JSONCPP_NEWEST_VALIDATED_POLICIES_VERSION "3.13.2")
+cmake_minimum_required(VERSION ${JSONCPP_OLDEST_VALIDATED_POLICIES_VERSION})
+if("${CMAKE_VERSION}" VERSION_LESS "${JSONCPP_NEWEST_VALIDATED_POLICIES_VERSION}")
+    #Set and use the newest available cmake policies that are validated to work
+    set(JSONCPP_CMAKE_POLICY_VERSION "${CMAKE_VERSION}")
+else()
+    set(JSONCPP_CMAKE_POLICY_VERSION "${JSONCPP_NEWEST_VALIDATED_POLICIES_VERSION}")
+endif()
+cmake_policy(VERSION ${JSONCPP_CMAKE_POLICY_VERSION})
+
+project(JSONCPP
+        VERSION 1.9.0 # <major>[.<minor>[.<patch>[.<tweak>]]]
+        LANGUAGES CXX)
+        
+set(CMAKE_BUILD_TYPE Debug)
+
+aux_source_directory(./src/lib_json SRCS)
+
+include_directories(./include)
+include_directories(/usr/include)
+
+message(STATUS "JsonCpp Version: ${JSONCPP_VERSION_MAJOR}.${JSONCPP_VERSION_MINOR}.${JSONCPP_VERSION_PATCH}")
+set( JSONCPP_SOVERSION 21 )
+set(JSONCPP_USE_SECURE_MEMORY "0" CACHE STRING "-D...=1 to use memory-wiping allocator for STL" )
+
+configure_file( "${PROJECT_SOURCE_DIR}/src/lib_json/version.h.in"
+                "${PROJECT_BINARY_DIR}/include/json/version.h"
+                NEWLINE_STYLE UNIX )
+                
+set(CMAKE_CXX_FLAGS "-Wall -std=c++14")
+set(CMAKE_CXX_FLAGS_DEBUG "-D_DEBUG -O0 -g -ggdb")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
+
+Link_directories(/usr/local/lib)
+add_library(jsoncpp SHARED ${SRCS})

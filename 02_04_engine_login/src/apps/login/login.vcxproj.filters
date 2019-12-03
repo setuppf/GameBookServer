@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="login_app.cpp" />
+    <ClCompile Include="account.cpp">
+      <Filter>account</Filter>
+    </ClCompile>
+    <ClCompile Include="player_mgr.cpp">
+      <Filter>account</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>account</Filter>
+    </ClCompile>
+    <ClCompile Include="http_request.cpp">
+      <Filter>http</Filter>
+    </ClCompile>
+    <ClCompile Include="http_request_account.cpp">
+      <Filter>http</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="login_app.h" />
+    <ClInclude Include="account.h">
+      <Filter>account</Filter>
+    </ClInclude>
+    <ClInclude Include="player_mgr.h">
+      <Filter>account</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>account</Filter>
+    </ClInclude>
+    <ClInclude Include="http_request.h">
+      <Filter>http</Filter>
+    </ClInclude>
+    <ClInclude Include="http_request_account.h">
+      <Filter>http</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="account">
+      <UniqueIdentifier>{0dfe626d-acb4-43c1-8441-0da017a0ef87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="http">
+      <UniqueIdentifier>{c5e13dd6-f1de-4ccf-ac55-4b7e8323e549}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

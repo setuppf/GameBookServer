@@ -1,0 +1,413 @@
+syntax = "proto3";
+import "db.proto";
+package Proto;
+
+///////////////////////////////////////////////////////////////
+
+message CmdThread {
+    enum CmdType {
+        Entity = 0;
+        Pool = 1;
+        Connect = 2;
+    }
+
+    CmdType cmd_type = 1;
+}
+
+message CmdApp {
+    enum CmdType {
+        Info = 0;
+    }
+
+    CmdType cmd_type = 1;
+}
+
+message Efficiency {
+	int32 thread_type = 1;
+	string thread_id = 2;
+	double time = 3; 
+}
+
+message AppRegister {
+	int32 type = 1; // app_type
+	int32 id = 2;
+}
+
+message AppInfoSync {
+	int32 app_id = 1;
+	int32 app_type = 2;
+	int32 online = 3;
+}
+
+message AppInfoListSync {
+    repeated AppInfoSync apps = 1;
+}
+
+message NetworkDisconnect {
+    int32 network_type = 1;
+    int32 socket = 2;
+}
+
+enum TagType {
+	TagTypeNone = 0;
+	TagTypeAccount = 1;
+	TagTypeApp = 2;    
+	TagTypeEntity = 3;    
+	TagTypeToWorld = 4;  // allinone toworld
+	TagTypePlayer = 5;    
+}
+
+message TagValue {
+	uint64 value_int64 = 1;
+	string value_str = 2;
+}
+
+message Tag {
+	TagType tag_type = 1;
+	TagValue tag_value = 2;
+}
+
+message NetworkConnect {
+    int32 network_type = 1;
+    Tag tag = 2;
+    string ip = 3;
+    int32 port = 4;
+}
+
+///////////////////////////////////////////////////////////////
+
+message Http {
+	string body = 1;
+	int32 status_code = 2;
+}
+
+///////////////////////////////////////////////////////////////
+
+message CreateComponentParam {
+	enum ParamType {
+		Int = 0;
+		String = 1;
+        UInt64 = 2;
+	}
+
+	ParamType type = 1;
+	int32 int_param = 2;
+	string string_param = 3;
+    uint64 uint64_param = 4;
+}
+
+message CreateComponent {
+    int32 thread_type = 1;
+	string class_name = 2;
+	bool is_to_all_thread = 3;
+	repeated CreateComponentParam params = 4;
+    uint64 sn = 5; // 指定sn
+}
+
+message RemoveComponent {
+	uint64 sn = 1;
+}
+
+message CreateSystem {
+	int32 thread_type = 1;
+	string system_name = 2;
+}
+
+///////////////////////////////////////////////////////////////
+
+message AccountCheck {
+	string account = 1;
+	string password = 2;
+}
+
+enum AccountCheckReturnCode {
+	ARC_OK = 0;
+	ARC_UNKONWN = 1;
+	ARC_NOT_FOUND_ACCOUNT = 2;
+	ARC_PASSWORD_WRONG = 3;
+	ARC_LOGGING = 4;	 // 正在登录
+	ARC_TIMEOUT = 5;	// 超时
+	ARC_ONLINE = 6;		// 已在线		
+}
+
+message AccountCheckRs {
+	AccountCheckReturnCode return_code = 1;
+}
+
+enum LoginHttpReturnCode {
+    LHRC_OK = 0;
+    LHRC_TIMEOUT = 1;
+    LHRC_NOTFOUND = 2; // 没有Login进程
+}
+
+message RobotState {
+	string account = 1;
+	int32 state = 2;
+}
+
+message RobotSyncState {
+	repeated RobotState states = 1;
+}
+
+message RobotCreate {
+    string account = 1;
+}
+
+// 玩家精减信息
+message PlayerLittle {
+	uint64 sn = 1;
+	string name = 2;
+	Gender gender = 3;
+	int32 level = 4;
+
+    // 用于登录Game
+	LastWorld last_world = 5;	// 公共地图
+	LastWorld last_dungeon = 6;	// 副本地图
+
+}
+
+message PlayerList {
+	string account = 1;
+	repeated PlayerLittle player = 2;
+}
+
+message QueryPlayerList {
+	string account = 1;
+}
+
+message QueryPlayer {
+	uint64 player_sn = 1;
+}
+
+message QueryPlayerRs {
+	string account = 1;
+	Player player = 2;
+}
+
+message CreatePlayer {
+	string name = 1;
+	Gender gender = 2; 
+}
+
+enum CreatePlayerReturnCode {
+	CPR_Create_OK = 0;
+	CPR_Unkonwn = 1;
+	CPR_Rename = 2; 
+}
+
+message CreatePlayerRs {
+	CreatePlayerReturnCode return_code = 2;
+}
+
+message CreatePlayerToDB {
+	string account = 2;
+	Player player = 3;
+}
+
+message CreatePlayerToDBRs {
+	string account = 1;
+	CreatePlayerReturnCode return_code = 2;
+}
+
+message SelectPlayer {
+	uint64 player_sn = 1;
+}
+
+message SelectPlayerRs {
+
+	enum SelectPlayerReturnCode {
+		SPRC_OK = 0;
+		SPRC_NotFound = 1;
+	}
+
+	SelectPlayerReturnCode return_code = 1;
+}
+
+message SavePlayer {
+	uint64 player_sn = 1;
+	Player player = 2;
+}
+
+message WorldSyncToGather {
+	uint64 world_sn = 1;
+	int32 world_id = 2;
+	int32 online = 3;
+}
+
+message WorldProxySyncToGather {
+	uint64 world_sn = 1;
+	bool is_remove = 2;
+	int32 world_id = 3;
+	int32 online = 4;
+}
+
+message GameToken {
+	enum ReturnCode{
+		GameToken_OK = 0;
+		GameToken_NO_GAME = 1;
+	}
+
+	ReturnCode return_code = 1;
+	string token = 2;
+	string ip = 3;
+	int32 port = 4;	
+}
+
+message LoginByToken {
+	string account = 1;
+	string token = 2;
+}
+
+message LoginByTokenRs {
+	enum ReturnCode {
+		LGRC_OK = 0;
+		LGRC_UNKONWN = 1;
+		LGRC_NOT_FOUND_ACCOUNT = 2;
+		LGRC_TOKEN_WRONG = 3;		
+	}
+
+	ReturnCode return_code = 1;
+}
+
+message LoginTokenToRedis {
+	string account = 1;
+	uint64 player_sn = 2;
+}
+
+message LoginTokenToRedisRs {
+	string account = 1;
+	string token = 2;
+}
+
+message AccountQueryOnlineToRedis {
+	string account = 1;
+}
+
+message AccountQueryOnlineToRedisRs {
+	enum ReturnCode {
+		SOTR_Offline = 0;
+		SOTR_Online = 1;
+	}
+
+	string account = 1;
+	ReturnCode return_code = 2;
+}
+
+message AccountSyncOnlineToRedis {
+	string account = 1;
+}
+
+message AccountDeleteOnlineToRedis {
+	string account = 1;
+}
+
+message PlayerSyncOnlineToRedis {
+	string account = 1;
+	int32 version = 2;
+}
+
+message PlayerDeleteOnlineToRedis {
+	string account = 1;
+	int32 version = 2;
+}
+
+message GameTokenToRedis {
+	string account = 1;
+}
+
+message TokenInfo
+{
+	string token = 1;
+	uint64 player_sn = 2;
+}
+
+message GameTokenToRedisRs {
+	string account = 1;
+	TokenInfo token_info = 2;
+}
+
+message SyncPlayer {
+	int32 app_id = 1;
+	string account = 2;
+	Player player = 3;
+}
+
+message EnterWorld {
+	int32 world_id = 1;
+	Vector3 position = 2;
+}
+
+message RequestWorld {
+	int32 world_id = 1;
+} 
+
+message CreateWorld {
+	int32 world_id = 1;
+	uint64 last_world_sn = 2;	
+	int32 game_app_id = 3;
+}
+
+message BroadcastCreateWorld {
+	int32 world_id = 1;
+	uint64 world_sn = 2;
+	uint64 last_world_sn = 3;
+}
+
+message BroadcastCreateWorldProxy {
+	int32 world_id = 1;
+	uint64 world_sn = 2;
+}
+
+message QueryWorld {
+	uint64 world_sn = 1;
+	uint64 last_world_sn = 2;
+}
+
+message QueryWorldRs {
+	enum ReturnCode {
+		QueryWorld_OK = 0;
+		QueryWorld_Failed = 1;
+	}
+
+	uint64 world_sn = 1;
+	ReturnCode return_code = 2;
+}
+
+message Teleport {
+	uint64 last_world_sn = 1;
+	uint64 player_sn = 2;
+	string account = 3;
+	Player player = 4;
+}
+
+message TeleportAfter {
+	uint64 player_sn = 1;
+}
+
+message RemovePlayer {
+	uint64 player_sn = 1;
+}
+
+message RequestSyncPlayer {
+	uint64 player_sn = 1;
+}
+
+message Role {
+	string name = 1;
+	uint64 sn = 2;
+	Gender gender = 3;
+	Vector3 position = 4;
+}
+
+message RoleAppear {
+	repeated Role role = 1;
+}
+
+message RoleDisAppear {
+	uint64 sn = 1;
+}
+
+message Move {
+	uint64 player_sn = 1;
+	repeated Vector3 position = 2;
+}

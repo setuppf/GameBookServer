@@ -1,0 +1,54 @@
+allinone:
+  thread_logic: 2
+  thread_mysql: 2
+  thread_listen: 2
+  thread_connector: 1
+  ip: 127.0.0.1
+  port: 5401
+  http_port: 7071
+
+appmgr:
+  thread_logic: 2
+  thread_listen: 2
+  thread_connector: 2
+  ip: 127.0.0.1
+  port: 5500
+  http_port: 7071
+
+login:
+  thread_logic: 2
+  thread_listen: 1
+  thread_connector: 1
+  url_login: http://192.168.0.120/member_login_t.php
+  url_method: "get"
+  apps:
+    - id: 101
+      ip: 127.0.0.1
+      port: 5401
+    - id: 102
+      ip: 127.0.0.1
+      port: 5402
+
+dbmgr:
+  thread_logic: 1
+  thread_mysql: 3
+  thread_listen: 1
+  ip: 127.0.0.1
+  port: 5800 
+  dbs:
+    - type: redis
+      ip: 192.168.0.120
+      port: 6379
+
+    - type: mysql
+      ip: 192.168.0.120
+      port: 3306
+      user: root
+      password: 123456
+      database_name: e_gamedata
+      character_set: utf8
+      collation: utf8_general_ci
+
+robot:
+  thread_logic: 10
+  thread_connector: 2

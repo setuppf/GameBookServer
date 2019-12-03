@@ -1,0 +1,26 @@
+login:
+  thread_num: 4
+  url_login: http://192.168.0.120/member_login_t.php
+  ip: 127.0.0.1
+  port: 5550
+
+dbmgr:
+  thread_num: 1
+  ip: 127.0.0.1
+  port: 5800 
+  dbs:
+    - type: redis
+      ip: 192.168.0.120
+      port: 6379
+
+    - type: mysql
+      ip: 192.168.0.120
+      port: 3306
+      user: root
+      password: 123456
+      database_name: e_gamedata
+      character_set: utf8
+      collation: utf8_general_ci
+
+robot:
+  thread_num: 10

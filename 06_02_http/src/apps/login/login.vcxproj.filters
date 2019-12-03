@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="account.cpp">
+      <Filter>account</Filter>
+    </ClCompile>
+    <ClCompile Include="login_obj.cpp">
+      <Filter>account</Filter>
+    </ClCompile>
+    <ClCompile Include="login_obj_mgr.cpp">
+      <Filter>account</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="account.h">
+      <Filter>account</Filter>
+    </ClInclude>
+    <ClInclude Include="login_obj.h">
+      <Filter>account</Filter>
+    </ClInclude>
+    <ClInclude Include="login_obj_mgr.h">
+      <Filter>account</Filter>
+    </ClInclude>
+    <ClInclude Include="login.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="account">
+      <UniqueIdentifier>{0dfe626d-acb4-43c1-8441-0da017a0ef87}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

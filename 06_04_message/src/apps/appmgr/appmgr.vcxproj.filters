@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="console_cmd_app.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="app_sync_component.cpp">
+      <Filter>sync</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="appmgr.h" />
+    <ClInclude Include="console_cmd_app.h">
+      <Filter>console</Filter>
+    </ClInclude>
+    <ClInclude Include="app_sync_component.h">
+      <Filter>sync</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="console">
+      <UniqueIdentifier>{a09cc8fd-f70d-4455-b317-3fde28ee746e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sync">
+      <UniqueIdentifier>{37fbe3f0-2a9d-46f2-a645-9c6b4b8e11ef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

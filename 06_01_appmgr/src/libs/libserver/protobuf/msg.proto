@@ -1,0 +1,160 @@
+syntax = "proto3";
+import "db.proto";
+package Proto;
+
+///////////////////////////////////////////////////////////////
+
+message CmdThread {
+    enum CmdType {
+        Entity = 0;
+        Pool = 1;
+    }
+
+    CmdType cmd_type = 1;
+}
+
+message CmdApp {
+    enum CmdType {
+        Info = 0;
+    }
+
+    CmdType cmd_type = 1;
+}
+
+message AppInfoSync {
+	int32 app_id = 1;
+	int32 app_type = 2;
+	int32 online = 3;
+}
+
+///////////////////////////////////////////////////////////////
+
+message CreateComponentParam {
+	enum ParamType {
+		Int = 0;
+		String = 1;
+	}
+
+	ParamType type = 1;
+	int32 int_param = 2;
+	string string_param = 3;
+}
+
+message CreateComponent {
+    int32 thread_type = 1;
+	string class_name = 2;
+	bool is_to_all_thread = 3;
+	repeated CreateComponentParam params = 4;
+}
+
+message RemoveComponent {
+	uint64 sn = 1;
+}
+
+///////////////////////////////////////////////////////////////
+
+message AccountCheck {
+	string account = 1;
+	string password = 2;
+}
+
+enum AccountCheckReturnCode {
+	ARC_OK = 0;
+	ARC_UNKONWN = 1;
+	ARC_NOT_FOUND_ACCOUNT = 2;
+	ARC_PASSWORD_WRONG = 3;
+	ARC_LOGGING = 4;	 // 正在登录
+	ARC_TIMEOUT = 5;	// 超时
+	ARC_ONLINE = 6;		// 已在线		
+}
+
+message AccountCheckRs {
+	AccountCheckReturnCode return_code = 1;
+}
+
+message AccountCheckToHttpRs {
+	AccountCheckReturnCode return_code = 1;	// AccountCheckRs::ReturnCode
+	string account = 2;
+}
+
+message RobotState {
+	string account = 1;
+	int32 state = 2;
+}
+
+message RobotSyncState {
+	repeated RobotState states = 1;
+}
+
+message RobotTestEnd {
+	int32 state = 1;
+}
+
+// 玩家精减信息
+message PlayerLittle {
+	uint64 sn = 1;
+	string name = 2;
+	Gender gender = 3;
+	int32 level = 4;
+}
+
+message PlayerList {
+	string account = 1;
+	repeated PlayerLittle player = 2;
+}
+
+message QueryPlayerList {
+	string account = 1;
+}
+
+message QueryPlayer {
+	uint64 player_sn = 1;
+}
+
+message QueryPlayerRs {
+	string account = 1;
+	Player player = 2;
+}
+
+message CreatePlayer {
+	string name = 1;
+	Gender gender = 2; 
+}
+
+enum CreatePlayerReturnCode {
+	CPR_Create_OK = 0;
+	CPR_Unkonwn = 1;
+	CPR_Rename = 2; 
+}
+
+message CreatePlayerRs {
+	CreatePlayerReturnCode return_code = 2;
+}
+
+message CreatePlayerToDB {
+	string account = 2;
+	Player player = 3;
+}
+
+message CreatePlayerToDBRs {
+	string account = 1;
+	CreatePlayerReturnCode return_code = 2;
+}
+
+message SelectPlayer {
+	uint64 player_sn = 1;
+}
+
+message SelectPlayerRs {
+
+	enum SelectPlayerReturnCode {
+		SPRC_OK = 0;
+		SPRC_NotFound = 1;
+	}
+
+	SelectPlayerReturnCode return_code = 1;
+}
+message SavePlayer {
+	uint64 player_sn = 1;
+	Player player = 2;
+}

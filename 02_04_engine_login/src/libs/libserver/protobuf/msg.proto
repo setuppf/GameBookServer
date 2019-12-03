@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package Proto;
+
+message AccountCheck {
+	string account = 1;
+	string password = 2;
+}
+
+message AccountCheckRs {
+	enum ReturnCode {
+		ARC_OK = 0;
+		ARC_UNKONWN = 1;
+		ARC_NOT_FOUND_ACCOUNT = 2;
+		ARC_PASSWORD_WRONG = 3;
+		ARC_LOGGING = 4; // ÕýÔÚµÇÂ¼
+		ARC_TIMEOUT = 5; // ³¬Ê±
+	}
+
+	int32 return_code = 1;
+}
+
+message AccountCheckToHttpRs {
+	int32 return_code = 1;	// AccountCheckRs::ReturnCode
+	string account = 2;
+}
+
+message RobotState {
+	string account = 1;
+	int32 state = 2;
+}
+
+message RobotSyncState {
+	repeated RobotState states = 1;
+}
+
+message RobotTestEnd {
+	int32 state = 1;
+}

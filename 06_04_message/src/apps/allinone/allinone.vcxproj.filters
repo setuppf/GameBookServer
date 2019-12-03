@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\dbmgr\mysql_connector.cpp">
+      <Filter>dbmgr\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dbmgr\mysql_msg.cpp">
+      <Filter>dbmgr\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\login\account.cpp">
+      <Filter>login\account</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dbmgr\mysql_base.cpp">
+      <Filter>dbmgr\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dbmgr\mysql_table_update.cpp">
+      <Filter>dbmgr\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\appmgr\console_cmd_app.cpp">
+      <Filter>appmgr\console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\login\player_component_account.cpp">
+      <Filter>login\player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\lobby.cpp">
+      <Filter>game\world</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\world_proxy_gather.cpp">
+      <Filter>game\gaterh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\console_cmd_world_proxy.cpp">
+      <Filter>game\console</Filter>
+    </ClCompile>
+    <ClCompile Include="..\appmgr\app_sync_component.cpp">
+      <Filter>appmgr\sync</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\world_component_gather.cpp">
+      <Filter>game\world\component</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="login">
+      <UniqueIdentifier>{d5dbe439-cc12-4fba-842b-8a5d68fdf192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="login\account">
+      <UniqueIdentifier>{c711f103-f5f9-4832-901a-d21a2f38b13f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dbmgr">
+      <UniqueIdentifier>{35d3d243-b873-4376-afd0-327b08c8d48c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dbmgr\mysql">
+      <UniqueIdentifier>{bce5dbce-30bc-44ad-84fa-74f9d4203759}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dbmgr\base">
+      <UniqueIdentifier>{af42b823-d72a-4125-8ae9-00406e4e2556}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appmgr">
+      <UniqueIdentifier>{56bbc38b-65c9-4f5d-9114-3db1cdc64d09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appmgr\console">
+      <UniqueIdentifier>{e377aaa8-a3fe-47cc-8b5f-d46ea387e715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="login\player">
+      <UniqueIdentifier>{0d563a0b-332f-4bf6-abea-a53bba00dfd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{a0d401b1-4742-43a7-8f49-f1bb60b1666d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\world">
+      <UniqueIdentifier>{e1e70343-5b92-411c-9313-887a5fea0f14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\gaterh">
+      <UniqueIdentifier>{fa11f87e-18db-43c3-ac2f-e23a43e1ca86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\console">
+      <UniqueIdentifier>{5bedff98-9ab8-47fd-853f-5696adde3f0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="space">
+      <UniqueIdentifier>{41f218b6-3fa3-47d0-973a-d59bb77ef662}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="appmgr\sync">
+      <UniqueIdentifier>{812cab3d-1d2d-417f-b243-c31bf73677fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\world\component">
+      <UniqueIdentifier>{b9a181e2-f955-4d71-88c7-b08b469ae004}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\dbmgr\mysql_connector.h">
+      <Filter>dbmgr\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\login\account.h">
+      <Filter>login\account</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dbmgr\mysql_base.h">
+      <Filter>dbmgr\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dbmgr\mysql_table_update.h">
+      <Filter>dbmgr\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\appmgr\console_cmd_app.h">
+      <Filter>appmgr\console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\login\player_component_account.h">
+      <Filter>login\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\lobby.h">
+      <Filter>game\world</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\world_proxy_gather.h">
+      <Filter>game\gaterh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\console_cmd_world_proxy.h">
+      <Filter>game\console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\appmgr\app_sync_component.h">
+      <Filter>appmgr\sync</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\world_component_gather.h">
+      <Filter>game\world\component</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

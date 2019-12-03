@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="app_sync_component.cpp">
+      <Filter>sync</Filter>
+    </ClCompile>
+    <ClCompile Include="create_world_component.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="console_cmd_create.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="appmgr.h" />
+    <ClInclude Include="app_sync_component.h">
+      <Filter>sync</Filter>
+    </ClInclude>
+    <ClInclude Include="create_world_component.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="console_cmd_create.h">
+      <Filter>console</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="sync">
+      <UniqueIdentifier>{37fbe3f0-2a9d-46f2-a645-9c6b4b8e11ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world">
+      <UniqueIdentifier>{8d8eb174-d7ad-48b0-a696-cf4f535dfbb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console">
+      <UniqueIdentifier>{1279dd87-1a9a-4a28-87fd-0f7b81e69af2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

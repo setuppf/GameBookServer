@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="lobby.cpp">
+      <Filter>world</Filter>
+    </ClCompile>
+    <ClCompile Include="world_proxy_gather.cpp">
+      <Filter>gaterh</Filter>
+    </ClCompile>
+    <ClCompile Include="console_cmd_world_proxy.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="world_component_gather.cpp">
+      <Filter>world\component</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h" />
+    <ClInclude Include="lobby.h">
+      <Filter>world</Filter>
+    </ClInclude>
+    <ClInclude Include="world_proxy_gather.h">
+      <Filter>gaterh</Filter>
+    </ClInclude>
+    <ClInclude Include="console_cmd_world_proxy.h">
+      <Filter>console</Filter>
+    </ClInclude>
+    <ClInclude Include="world_component_gather.h">
+      <Filter>world\component</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="world">
+      <UniqueIdentifier>{9aaf531c-37ce-4788-b6e2-9f82a540a45f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gaterh">
+      <UniqueIdentifier>{fcaa5776-5340-4c67-b83e-63d41faf2793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console">
+      <UniqueIdentifier>{b47ff997-2869-4745-9f46-fa9fe9c62af3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world\component">
+      <UniqueIdentifier>{d325db7b-91f8-480b-9445-1115d2ca3377}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
