@@ -36,8 +36,7 @@ void Client::DataHandler()
         if (_lastMsg.empty())
         {
             _lastMsg = GenRandom();
-            std::cout << "send msg. size:" << _lastMsg.length() << std::endl;
-            std::cout << "send msg. size:" << _lastMsg.c_str() << std::endl;
+            std::cout << "send. size:" << _lastMsg.length() << " msg:" << _lastMsg.c_str() << std::endl;
 
             Packet* pPacket = new Packet(1);
             pPacket->AddBuffer(_lastMsg.c_str(), _lastMsg.length());
@@ -52,7 +51,7 @@ void Client::DataHandler()
                 if (pPacket != nullptr)
                 {
                     const std::string msg(pPacket->GetBuffer(), pPacket->GetDataLength());
-                    std::cout << "recv msg. size:" << pPacket->GetDataLength() << std::endl;
+                    std::cout << "recv. size:" << pPacket->GetDataLength() << std::endl;
 
                     if (msg != _lastMsg)
                         std::cout << " !!!!!!!!!!!!!!!!! error." << std::endl;

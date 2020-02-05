@@ -16,7 +16,7 @@ bool Server::DataHandler()
 	if (_isShow)
 	{
 		_isShow = false;
-		std::cout << "accept:" << _acceptCount << "\trecv msg:" << _recvMsgCount << "\tsend msg:" << _sendMsgCount << std::endl;
+		std::cout << "accept:" << _acceptCount << "\trecv count:" << _recvMsgCount << "\tsend count:" << _sendMsgCount << std::endl;
 	}
 
 	return true;
@@ -35,7 +35,7 @@ void Server::HandlerOne(ConnectObj* pConnectObj)
 		}
 
 		std::string msg(pPacket->GetBuffer(), pPacket->GetDataLength());
-		std::cout << "recv msg:" << msg.c_str() << std::endl;
+		std::cout << "recv size:" << msg.length() << " msg:" << msg.c_str() << std::endl;
 		pConnectObj->SendPacket(pPacket);
 
 		++_recvMsgCount;

@@ -15,11 +15,8 @@ ConnectObj::ConnectObj(Network* pNetWork, int socket) :_pNetWork(pNetWork), _soc
 
 ConnectObj::~ConnectObj()
 {
-	if (_recvBuffer != nullptr)
-		delete _recvBuffer;
-
-	if (_sendBuffer != nullptr)
-		delete _sendBuffer;
+    delete _recvBuffer;
+    delete _sendBuffer;
 }
 
 void ConnectObj::Dispose()
@@ -107,7 +104,7 @@ bool ConnectObj::Send() const
 		const int size = ::send(_socket, pBuffer, needSendSize, 0);
 		if (size > 0)
 		{
-			std::cout << "send size:" << size << std::endl;
+			//std::cout << "send size:" << size << std::endl;
 			_sendBuffer->RemoveDate(size);
 
 			// 下一帧再发送
