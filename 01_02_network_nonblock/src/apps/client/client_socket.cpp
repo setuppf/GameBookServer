@@ -51,12 +51,12 @@ void ClientSocket::SendMsg()
 	memset(buffer, 0, sizeof(buffer));
 
 	std::string msg = "ping_" + std::to_string(_curIndex);
-	std::cout << "::send msg:" << msg.c_str() << " length:" << msg.length() << " sokcet:" << socket << std::endl;
+	std::cout << "::send." << msg.c_str() << " len:" << msg.length() << " socket:" << socket << std::endl;
 	::send(socket, msg.c_str(), msg.length(), 0);
 
 	memset(&buffer, 0, sizeof(buffer));
-	int size = ::recv(socket, buffer, 1024, 0);
-	std::cout << "::recv msg:" << buffer << " length:" << size << " sokcet:" << socket << std::endl << std::endl;
+	int size = ::recv(socket, buffer, sizeof(buffer), 0);
+	std::cout << "::recv." << buffer << " len:" << size << " socket:" << socket << std::endl << std::endl;
 
 	_sock_close(socket);
 	_sock_exit();
