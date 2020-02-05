@@ -3,3 +3,22 @@
 ################################################################################
 
 /01_01_network_first/.vs/network/v16
+/07_05_move/.vs/engine/v16
+/07_05_move/bin/Debug
+/07_05_move/libs/Debug
+/07_05_move/src/apps/allinone/Debug
+/07_05_move/src/apps/appmgr/Debug
+/07_05_move/src/apps/dbmgr/Debug
+/07_05_move/src/apps/game/Debug
+/07_05_move/src/apps/login/Debug
+/07_05_move/src/apps/space/Debug
+/07_05_move/src/libs/libplayer/Debug
+/07_05_move/src/libs/libresource/Debug
+/07_05_move/src/libs/libserver/Debug
+/07_05_move/src/tools/robots/Debug
+/01_01_network_first/bin/Debug
+/01_01_network_first/libs/Debug
+/01_01_network_first/src/apps/client/Debug
+/01_01_network_first/src/apps/server/Debug
+/01_01_network_first/src/libs/network/Debug
+/01_02_network_nonblock/.vs/network/v16

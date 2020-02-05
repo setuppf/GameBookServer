@@ -36,15 +36,17 @@ int main(int argc, char *argv[])
 	socklen_t socketLength = sizeof(socketClient);
 	int newSocket = ::accept(socket, &socketClient, &socketLength);
 
-	std::cout << "accept one connect" << std::endl;
+	std::cout << "accept one connection" << std::endl;
 
 	char buf[1024];
-	auto size = ::recv(newSocket, buf, 1024, 0);
+    memset(&buf, 0, sizeof(buf));
+
+	auto size = ::recv(newSocket, buf, sizeof(buf), 0);
 	if (size > 0)
 	{
-		std::cout << "::recv msg:" << buf << std::endl;
+		std::cout << "::recv." << buf << std::endl;
 		::send(newSocket, buf, size, 0);
-		std::cout << "::send msg:" << buf << std::endl;
+		std::cout << "::send." << buf << std::endl;
 	}
 
 	_sock_close(socket);

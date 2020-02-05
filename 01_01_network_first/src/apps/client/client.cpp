@@ -29,12 +29,12 @@ int main(int argc, char *argv[])
 	std::string msg = "ping";
 	::send(socket, msg.c_str(), msg.length(), 0);
 
-	std::cout << "::send msg:" << msg.c_str() << std::endl;
+	std::cout << "::send." << msg.c_str() << std::endl;
 
 	char buffer[1024];
 	memset(&buffer, 0, sizeof(buffer));
-	::recv(socket, buffer, 1024, 0);
-	std::cout << "::recv msg:" << buffer << std::endl;
+	::recv(socket, buffer, sizeof(buffer), 0);
+	std::cout << "::recv." << buffer << std::endl;
 
 	_sock_close(socket);
 	_sock_exit();

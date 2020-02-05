@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 		SOCKET newSocket = ::accept(socket, &socketClient, &socketLength);
 		if (newSocket > 0)
 		{
-			std::cout << "::accept one connect.socket:" << newSocket << std::endl;
+			std::cout << "::accept one connection.socket:" << newSocket << std::endl;
 			_sock_nonblock(newSocket);
 			sockets.push_back(newSocket);
 		}
@@ -57,12 +57,13 @@ int main(int argc, char *argv[])
 		while (iter != sockets.end())
 		{
 			SOCKET one = *iter;
-			auto size = ::recv(one, buf, 1024, 0);
+            memset(&buf, 0, sizeof(buf));
+			auto size = ::recv(one, buf, sizeof(buf), 0);
 			if (size > 0)
 			{
-				std::cout << "::recv msg:" << buf << " socket:" << one << std::endl;
+				std::cout << "::recv." << buf << " socket:" << one << std::endl;
 				::send(one, buf, size, 0);
-				std::cout << "::send msg:" << buf << " socket:" << one << std::endl << std::endl;
+				std::cout << "::send." << buf << " socket:" << one << std::endl << std::endl;
 
 				_sock_close(one);
 				_sock_exit();
