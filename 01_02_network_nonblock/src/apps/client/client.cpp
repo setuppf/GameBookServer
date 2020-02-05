@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 		clients.push_back(std::make_shared<ClientSocket>(index));
 	}
 
-	while (clients.size() > 0)
+	while (!clients.empty())
 	{
 		auto iter = clients.begin();
 		while (iter != clients.end())

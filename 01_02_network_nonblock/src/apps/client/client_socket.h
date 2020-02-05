@@ -5,7 +5,7 @@ class ClientSocket
 {
 public:
 	ClientSocket(int index);
-	void SendMsg();
+	void MsgHandler();
 	bool IsRun() const;
 	void Stop();
 
