@@ -46,11 +46,7 @@ int main(int argc, char* argv[])
     while (true)
     {
         SOCKET newSocket = ::accept(socket, &socketClient, &socketLength);
-#ifndef WIN32
-        if (newSocket > 0)
-#else
-        if (newSocket > 0 && WSAEWOULDBLOCK != _sock_err())
-#endif
+        if (newSocket != INVALID_SOCKET)
         {
             std::cout << "new connection.socket:" << newSocket << std::endl;
             _sock_nonblock(newSocket);
@@ -77,7 +73,7 @@ int main(int argc, char* argv[])
             }
         }
     }
-    
+
     return 0;
 }
 
