@@ -5,8 +5,8 @@
 class NetworkListen :public Network
 {
 public:
-	bool Init( ) override;
-	void RegisterMsgFuntion( ) override;
+	bool Init( );
+	void RegisterMsgFuntion( );
 	bool Listen(std::string ip, int port);
 	void Update();
 
