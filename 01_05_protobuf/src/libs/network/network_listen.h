@@ -5,8 +5,6 @@
 class NetworkListen :public Network
 {
 public:
-	bool Init( );
-	void RegisterMsgFuntion( );
 	bool Listen(std::string ip, int port);
 	void Update();
 

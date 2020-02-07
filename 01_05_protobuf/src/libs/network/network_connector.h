@@ -7,8 +7,6 @@ class Packet;
 class NetworkConnector : public Network
 {
 public:
-	bool Init( );
-	void RegisterMsgFuntion( );
 	virtual bool Connect(std::string ip, int port);
 	void Update();
 
