@@ -9,9 +9,3 @@ void ThreadObject::Dispose()
 {
 
 }
-
-void ThreadObject::OnUpdate()
-{
-    ProcessPacket();
-    Update();
-}

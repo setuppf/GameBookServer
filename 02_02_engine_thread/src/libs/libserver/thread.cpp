@@ -37,7 +37,7 @@ void Thread::Update() {
     for (ThreadObject* pTObj : _tmpObjs) {
 
         pTObj->ProcessPacket();
-        pTObj->OnUpdate();
+        pTObj->Update();
 
         // ·Ç¼¤»î×´Ì¬£¬É¾³ý
         if (!pTObj->IsActive()) {
@@ -56,7 +56,7 @@ void Thread::Update() {
 }
 
 void Thread::AddThreadObj(ThreadObject* obj) {
-    obj->RegisterMsgFuntion();
+    obj->RegisterMsgFunction();
 
     std::lock_guard<std::mutex> guard(_thread_lock);
     _objlist.push_back(obj);

@@ -10,7 +10,7 @@ bool NetworkConnector::Init( ) {
 	return true;
 }
 
-void NetworkConnector::RegisterMsgFuntion( ) { 
+void NetworkConnector::RegisterMsgFunction( ) { 
 
 }
 

@@ -9,9 +9,9 @@ bool Robot::Init()
 	return true;
 }
 
-void Robot::RegisterMsgFuntion()
+void Robot::RegisterMsgFunction()
 {
-	NetworkConnector::RegisterMsgFuntion();
+	NetworkConnector::RegisterMsgFunction();
 }
 
 void Robot::Update()

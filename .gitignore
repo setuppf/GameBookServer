@@ -118,3 +118,10 @@
 /01_05_protobuf/src/tools/robots/Makefile
 /01_05_protobuf/src/tools/robots/cmake_install.cmake
 /01_05_protobuf/src/tools/robots/CMakeCache.txt
+/02_02_engine_thread/.vs/engine/v16
+/02_02_engine_thread/bin/Debug
+/02_02_engine_thread/libs/Debug
+/02_02_engine_thread/src/apps/login/Debug
+/02_02_engine_thread/src/libs/libserver/Debug
+/02_02_engine_thread/src/tools/robots/Debug
+/02_03_engine_message/.vs/engine/v16

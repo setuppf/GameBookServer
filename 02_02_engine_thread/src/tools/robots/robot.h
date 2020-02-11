@@ -5,7 +5,7 @@
 class Robot : public NetworkConnector {
 public:
 	bool Init( ) override;
-	void RegisterMsgFuntion( ) override;
+	void RegisterMsgFunction( ) override;
 	void Update( ) override;
 };
 
