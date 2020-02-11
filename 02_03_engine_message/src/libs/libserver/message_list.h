@@ -11,7 +11,7 @@ typedef std::function<void(Packet*)> HandleFunction;
 class MessageList
 {
 public:
-    void RegisterFuntion(int msgId, HandleFunction function);
+    void RegisterFunction(int msgId, HandleFunction function);
     bool IsFollowMsgId(int msgId);
     void ProcessPacket();
     void AddPacket(Packet* pPacket);

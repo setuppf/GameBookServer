@@ -11,7 +11,7 @@ class Robot : public NetworkConnector, public StateTemplateMgr<RobotStateType, R
 public:
 	explicit Robot(std::string account);
 	bool Init( ) override;
-	void RegisterMsgFuntion( ) override;
+	void RegisterMsgFunction( ) override;
 	void Update( ) override;
 
 	std::string GetAccount() const;

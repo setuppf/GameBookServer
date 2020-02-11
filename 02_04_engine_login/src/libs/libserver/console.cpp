@@ -64,7 +64,7 @@ bool Console::Init()
 	return true;
 }
 
-void Console::RegisterMsgFuntion()
+void Console::RegisterMsgFunction()
 {
 }
 

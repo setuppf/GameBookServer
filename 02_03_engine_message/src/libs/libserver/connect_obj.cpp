@@ -93,15 +93,7 @@ bool ConnectObj::Recv() const
             if (pPacket == nullptr)
                 break;
 
-
-            if (pPacket->GetMsgId() == Proto::MsgId::Ping)
-            {
-                //RecvPing();
-            }
-            else
-            {
-                ThreadMgr::GetInstance()->AddPacket(pPacket);
-            }
+            ThreadMgr::GetInstance()->AddPacket(pPacket);
         }
     }
 

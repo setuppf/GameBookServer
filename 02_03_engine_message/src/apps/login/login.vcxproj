@@ -154,9 +154,11 @@
   <ItemGroup>
     <ClCompile Include="login_app.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="test_msg_handler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="login_app.h" />
+    <ClInclude Include="test_msg_handler.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

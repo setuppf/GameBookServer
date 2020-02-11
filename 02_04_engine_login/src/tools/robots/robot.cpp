@@ -21,10 +21,10 @@ bool Robot::Init()
     return true;
 }
 
-void Robot::RegisterMsgFuntion()
+void Robot::RegisterMsgFunction()
 {
-    NetworkConnector::RegisterMsgFuntion();
-    RegisterFuntion(Proto::MsgId::C2L_AccountCheckRs, BindFunP1(this, &Robot::HandleAccountCheckRs));
+    NetworkConnector::RegisterMsgFunction();
+    RegisterFunction(Proto::MsgId::C2L_AccountCheckRs, BindFunP1(this, &Robot::HandleAccountCheckRs));
 }
 
 void Robot::Update()

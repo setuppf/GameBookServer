@@ -4,7 +4,7 @@
 #include "packet.h"
 #include "thread_mgr.h"
 
-void MessageList::RegisterFuntion(int msgId, HandleFunction function)
+void MessageList::RegisterFunction(int msgId, HandleFunction function)
 {
     std::lock_guard<std::mutex> guard(_msgMutex);
     _callbackHandle[msgId] = function;

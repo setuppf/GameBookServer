@@ -58,14 +58,14 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace Proto {
 
 enum MsgId : int {
-  None = 0,
-  Ping = 1,
+  MI_None = 0,
+  MI_TestMsg = 1,
   MsgId_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   MsgId_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool MsgId_IsValid(int value);
-constexpr MsgId MsgId_MIN = None;
-constexpr MsgId MsgId_MAX = Ping;
+constexpr MsgId MsgId_MIN = MI_None;
+constexpr MsgId MsgId_MAX = MI_TestMsg;
 constexpr int MsgId_ARRAYSIZE = MsgId_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MsgId_descriptor();

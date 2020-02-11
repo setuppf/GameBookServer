@@ -1,14 +1,15 @@
 #pragma once
+#include "libserver/thread_obj.h"
 
-#include "libserver/network_connector.h"
-
-class Robot : public NetworkConnector {
+class TestMsgHandler :public ThreadObject
+{
 public:
     bool Init() override;
     void RegisterMsgFunction() override;
     void Update() override;
 
 private:
-    bool _isSendMsg{ false };
+    void HandleMsg(Packet* pPacket);
+
 };
 

@@ -8,7 +8,7 @@ bool NetworkListen::Init()
     return true;
 }
 
-void NetworkListen::RegisterMsgFuntion()
+void NetworkListen::RegisterMsgFunction()
 {
 
 }

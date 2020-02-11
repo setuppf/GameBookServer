@@ -25,9 +25,9 @@ void Network::Dispose()
 }
 
 
-void Network::RegisterMsgFuntion()
+void Network::RegisterMsgFunction()
 {
-    RegisterFuntion(Proto::MsgId::MI_NetworkDisconnectToNet, BindFunP1(this, &Network::HandleDisconnect));
+    RegisterFunction(Proto::MsgId::MI_NetworkDisconnectToNet, BindFunP1(this, &Network::HandleDisconnect));
 }
 
 #ifndef WIN32

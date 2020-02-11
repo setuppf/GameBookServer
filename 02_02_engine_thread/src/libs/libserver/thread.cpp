@@ -36,7 +36,6 @@ void Thread::Update() {
 
     for (ThreadObject* pTObj : _tmpObjs) {
 
-        pTObj->ProcessPacket();
         pTObj->Update();
 
         // ·Ç¼¤»î×´Ì¬£¬É¾³ý

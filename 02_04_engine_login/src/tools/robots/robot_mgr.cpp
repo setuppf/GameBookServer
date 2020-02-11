@@ -6,10 +6,10 @@
 #include "global_robots.h"
 #include <sstream>
 
-void RobotMgr::RegisterMsgFuntion()
+void RobotMgr::RegisterMsgFunction()
 {
-    NetworkConnector::RegisterMsgFuntion();
-    RegisterFuntion(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
+    NetworkConnector::RegisterMsgFunction();
+    RegisterFunction(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
 }
 
 bool RobotMgr::Init()

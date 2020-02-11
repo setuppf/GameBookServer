@@ -3,6 +3,6 @@ syntax = "proto3";
 package Proto;
 
 enum MsgId {
-	None = 0; // proto3的枚举，第一个必为0
-	Ping = 1;
+	MI_None = 0; // proto3的枚举，第一个必为0
+	MI_TestMsg = 1;
 }

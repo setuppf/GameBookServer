@@ -9,10 +9,10 @@ bool RobotTest::Init()
     return true;
 }
 
-void RobotTest::RegisterMsgFuntion()
+void RobotTest::RegisterMsgFunction()
 {
-    RegisterFuntion(Proto::MsgId::MI_RobotTestBegin, BindFunP1(this, &RobotTest::HandleTestBegin));
-    RegisterFuntion(Proto::MsgId::MI_RobotTestEnd, BindFunP1(this, &RobotTest::HandleTestEnd));
+    RegisterFunction(Proto::MsgId::MI_RobotTestBegin, BindFunP1(this, &RobotTest::HandleTestBegin));
+    RegisterFunction(Proto::MsgId::MI_RobotTestEnd, BindFunP1(this, &RobotTest::HandleTestEnd));
 }
 
 void RobotTest::Update()

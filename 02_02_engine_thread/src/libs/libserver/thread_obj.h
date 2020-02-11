@@ -10,10 +10,6 @@ public:
     virtual void RegisterMsgFunction( ) = 0;
     virtual void Update( ) = 0;
 
-    void ProcessPacket( ) {
-        //_message_list.ProcessPacket( );
-    }
-
     bool IsActive() const;
 
 protected:

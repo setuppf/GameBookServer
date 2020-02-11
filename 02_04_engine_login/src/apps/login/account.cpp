@@ -10,10 +10,10 @@ bool Account::Init()
     return true;
 }
 
-void Account::RegisterMsgFuntion()
+void Account::RegisterMsgFunction()
 {
-    RegisterFuntion(Proto::MsgId::C2L_AccountCheck, BindFunP1(this, &Account::HandleAccountCheck));
-    RegisterFuntion(Proto::MsgId::MI_AccountCheckToHttpRs, BindFunP1(this, &Account::HandleAccountCheckToHttpRs));
+    RegisterFunction(Proto::MsgId::C2L_AccountCheck, BindFunP1(this, &Account::HandleAccountCheck));
+    RegisterFunction(Proto::MsgId::MI_AccountCheckToHttpRs, BindFunP1(this, &Account::HandleAccountCheckToHttpRs));
 }
 
 void Account::Update()

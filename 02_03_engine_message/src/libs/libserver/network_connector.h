@@ -8,7 +8,7 @@ class NetworkConnector : public Network
 {
 public:
 	bool Init( ) override;
-	void RegisterMsgFuntion( ) override;
+	void RegisterMsgFunction( ) override;
 	
 	virtual bool Connect(std::string ip, int port);
 	void Update( ) override;
