@@ -35,7 +35,7 @@ void Robot::RegisterMsgFunction()
 
     AttachCallBackHandler(pMsgCallBack);
 
-    pMsgCallBack->RegisterFuntionWithObj(Proto::MsgId::C2L_AccountCheckRs, BindFunP2(this, &Robot::HandleAccountCheckRs));
+    pMsgCallBack->RegisterFunctionWithObj(Proto::MsgId::C2L_AccountCheckRs, BindFunP2(this, &Robot::HandleAccountCheckRs));
 }
 
 void Robot::Update()

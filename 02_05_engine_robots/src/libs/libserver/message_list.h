@@ -41,7 +41,7 @@ public:
     using HandleFunctionWithObj = std::function<void(T*, Packet*)>;
     using HandleGetObject = std::function<T*(SOCKET)>;
 
-    void RegisterFuntionWithObj(int msgId, HandleFunctionWithObj function);
+    void RegisterFunctionWithObj(int msgId, HandleFunctionWithObj function);
     bool IsFollowMsgId(Packet* packet) override;
     void ProcessPacket() override;
 
@@ -54,7 +54,7 @@ private:
 };
 
 template <class T>
-void MessageCallBackFunctionFilterObj<T>::RegisterFuntionWithObj(const int msgId, HandleFunctionWithObj function)
+void MessageCallBackFunctionFilterObj<T>::RegisterFunctionWithObj(const int msgId, HandleFunctionWithObj function)
 {
     _callbackHandleWithObj[msgId] = function;
 }
