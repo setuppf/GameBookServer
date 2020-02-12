@@ -24,7 +24,7 @@ class MessageCallBackFunction :public MessageCallBackFunctionInfo
 {
 public:
     using HandleFunction = std::function<void(Packet*)>;
-    void RegisterFuntion(int msgId, HandleFunction function);
+    void RegisterFunction(int msgId, HandleFunction function);
     bool IsFollowMsgId(Packet* packet) override;
     void ProcessPacket() override;
 

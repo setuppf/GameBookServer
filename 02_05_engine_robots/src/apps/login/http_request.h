@@ -35,7 +35,7 @@ class HttpRequest :public ThreadObject
 public:
     explicit HttpRequest(std::string account);
     bool Init() override;
-    void RegisterMsgFuntion() override;
+    void RegisterMsgFunction() override;
     void Update() override;
 
 protected:

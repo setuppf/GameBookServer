@@ -21,9 +21,3 @@ Thread* ThreadObject::GetThread() const
 {
     return _pThread;
 }
-
-void ThreadObject::OnUpdate()
-{
-    ProcessPacket();
-    Update();
-}

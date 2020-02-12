@@ -27,11 +27,11 @@ void Network::Dispose()
 }
 
 
-void Network::RegisterMsgFuntion()
+void Network::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
     AttachCallBackHandler(pMsgCallBack);
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_NetworkDisconnectToNet, BindFunP1(this, &Network::HandleDisconnect));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkDisconnectToNet, BindFunP1(this, &Network::HandleDisconnect));
 }
 
 #ifndef WIN32

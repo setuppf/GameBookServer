@@ -16,7 +16,7 @@ void ThreadObjectList::AddObject(ThreadObject* obj)
     }
     else
     {
-        obj->RegisterMsgFuntion();
+        obj->RegisterMsgFunction();
         _objlist.push_back(obj);
 
         const auto pThread = dynamic_cast<Thread*>(this);
@@ -35,7 +35,7 @@ void ThreadObjectList::Update()
     for (ThreadObject* pTObj : _tmpObjs)
     {
         pTObj->ProcessPacket();
-        pTObj->OnUpdate();
+        pTObj->Update();
 
         // ·Ç¼¤»î×´Ì¬£¬É¾³ý
         if (!pTObj->IsActive())

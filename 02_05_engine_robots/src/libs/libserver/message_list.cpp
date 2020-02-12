@@ -10,7 +10,7 @@ void MessageCallBackFunctionInfo::AddPacket(Packet* pPacket)
     _msgList.push_back(pPacket);
 }
 
-void MessageCallBackFunction::RegisterFuntion(int msgId, HandleFunction function)
+void MessageCallBackFunction::RegisterFunction(int msgId, HandleFunction function)
 {
     std::lock_guard<std::mutex> guard(_msgMutex);
     _callbackHandle[msgId] = function;

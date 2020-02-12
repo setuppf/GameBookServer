@@ -22,7 +22,7 @@ bool Robot::Init()
     return true;
 }
 
-void Robot::RegisterMsgFuntion()
+void Robot::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunctionFilterObj<Robot>();
     pMsgCallBack->GetPacketObject = [this](SOCKET socket)->Robot*

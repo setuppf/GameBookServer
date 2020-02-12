@@ -27,7 +27,7 @@ bool HttpRequest::Init()
     return true;
 }
 
-void HttpRequest::RegisterMsgFuntion()
+void HttpRequest::RegisterMsgFunction()
 {
 }
 
