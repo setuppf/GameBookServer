@@ -16,7 +16,7 @@ bool Robot::Init()
     if (!NetworkConnector::Init())
         return false;
 
-    InitStateTemplateMgr(RobotStateType::RobotState_Login_Connectting);    
+    InitStateTemplateMgr(RobotStateType::RobotState_Login_Connecting);    
     this->Connect("127.0.0.1", 2233);
     return true;
 }
@@ -40,8 +40,8 @@ std::string Robot::GetAccount() const
 
 void Robot::RegisterState()
 {
-    RegisterStateClass(RobotStateType::RobotState_Login_Connectting, DynamicStateBind(RobotStateLoginConnectting));
-    RegisterStateClass(RobotStateType::RobotState_Login_Connectted, DynamicStateBind(RobotStateLoginConnectted));
+    RegisterStateClass(RobotStateType::RobotState_Login_Connecting, DynamicStateBind(RobotStateLoginConnecting));
+    RegisterStateClass(RobotStateType::RobotState_Login_Connected, DynamicStateBind(RobotStateLoginConnected));
     RegisterStateClass(RobotStateType::RobotState_Login_Logined, DynamicStateBind(RobotStateLoginLogined));
 }
 
