@@ -35,10 +35,9 @@ void Account::HandleAccountCheck(Packet* pPacket)
         Proto::AccountCheckRs protoResult;
         protoResult.set_return_code(Proto::AccountCheckRs::ARC_LOGGING);
 
-        auto pResultPacket = new Packet(Proto::MsgId::C2L_AccountCheckRs, socket);
-        pResultPacket->SerializeToBuffer(protoResult);
-
-        SendPacket(pResultPacket);
+        auto pRsPacket = new Packet(Proto::MsgId::C2L_AccountCheckRs, socket);
+        pRsPacket->SerializeToBuffer(protoResult);
+        SendPacket(pRsPacket);
 
         // ¹Ø±ÕÍøÂç
         const auto pPacketDis = new Packet(Proto::MsgId::MI_NetworkDisconnectToNet, socket);
