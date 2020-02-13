@@ -57,7 +57,7 @@ void ThreadObjectList::Update()
                 pObj->ProcessPacket(pPacket);
         }
 
-        pObj->OnUpdate();
+        pObj->Update();
 
         // ·Ç¼¤»î×´Ì¬£¬É¾³ý
         if (!pObj->IsActive())
