@@ -36,7 +36,7 @@ private:
     std::mutex _thread_lock;
     std::map<uint64, Thread*> _threads;
 
-    // NetworkLoactor
+    // NetworkLocator
     std::mutex _locator_lock;
     std::map<APP_TYPE, Network*> _networkLocator;
 };
