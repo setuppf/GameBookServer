@@ -25,7 +25,7 @@ public:
     void DispatchPacket(Packet* pPacket);
     void SendPacket(Packet* pPacket);
 
-    void Dispose();
+    void Dispose() override;
 
 private:
     Network* GetNetwork(APP_TYPE appType);

@@ -102,6 +102,8 @@ void ThreadMgr::Dispose()
         delete pThread;
         ++iter;
     }
+
+    ThreadObjectList::Dispose();
 }
 
 void ThreadMgr::DispatchPacket(Packet* pPacket)
