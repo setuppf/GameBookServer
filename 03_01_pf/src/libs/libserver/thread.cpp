@@ -14,7 +14,7 @@ void ThreadObjectList::AddObject(ThreadObject* obj)
     }
     else
     {
-        obj->RegisterMsgFuntion();
+        obj->RegisterMsgFunction();
         _objlist.GetAddCache()->emplace_back(obj);
 
         const auto pThread = dynamic_cast<Thread*>(this);
