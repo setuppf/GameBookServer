@@ -4,7 +4,7 @@
 
 class RobotStateLoginConnectting : public RobotState {
 public:
-    DynamicStateCreate(RobotStateLoginConnectting, RobotState_Login_Connectting);
+    DynamicStateCreate(RobotStateLoginConnectting, RobotState_Login_Connecting);
 
     void OnEnterState() override;
     RobotStateType OnUpdate() override;
@@ -12,7 +12,7 @@ public:
 
 class RobotStateLoginConnectted : public RobotState {
 public:
-    DynamicStateCreate( RobotStateLoginConnectted, RobotState_Login_Connectted );
+    DynamicStateCreate( RobotStateLoginConnectted, RobotState_Login_Connected );
 
     void OnEnterState( ) override;
 };

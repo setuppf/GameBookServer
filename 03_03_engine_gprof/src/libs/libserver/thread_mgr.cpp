@@ -120,6 +120,8 @@ void ThreadMgr::Dispose()
         ++iter;
     }
     _threads.clear();
+
+    ThreadObjectList::Dispose();
 }
 
 void ThreadMgr::DispatchPacket(Packet* pPacket)

@@ -17,12 +17,12 @@ bool Robot::Init()
     if (!NetworkConnector::Init())
         return false;
 
-    InitStateTemplateMgr(RobotStateType::RobotState_Login_Connectting);
+    InitStateTemplateMgr(RobotStateType::RobotState_Login_Connecting);
     this->Connect("127.0.0.1", 2233);
     return true;
 }
 
-void Robot::RegisterMsgFuntion()
+void Robot::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunctionFilterObj<Robot>();
     pMsgCallBack->GetPacketObject = [this](SOCKET socket)->Robot *
@@ -35,7 +35,7 @@ void Robot::RegisterMsgFuntion()
 
     AttachCallBackHander(pMsgCallBack);
 
-    pMsgCallBack->RegisterFuntionWithObj(Proto::MsgId::C2L_AccountCheckRs, BindFunP2(this, &Robot::HandleAccountCheckRs));
+    pMsgCallBack->RegisterFunctionWithObj(Proto::MsgId::C2L_AccountCheckRs, BindFunP2(this, &Robot::HandleAccountCheckRs));
 }
 
 void Robot::Update()
@@ -51,8 +51,8 @@ std::string Robot::GetAccount() const
 
 void Robot::RegisterState()
 {
-    RegisterStateClass(RobotStateType::RobotState_Login_Connectting, DynamicStateBind(RobotStateLoginConnectting));
-    RegisterStateClass(RobotStateType::RobotState_Login_Connectted, DynamicStateBind(RobotStateLoginConnectted));
+    RegisterStateClass(RobotStateType::RobotState_Login_Connecting, DynamicStateBind(RobotStateLoginConnectting));
+    RegisterStateClass(RobotStateType::RobotState_Login_Connected, DynamicStateBind(RobotStateLoginConnectted));
     RegisterStateClass(RobotStateType::RobotState_Login_Logined, DynamicStateBind(RobotStateLoginLogined));
 }
 

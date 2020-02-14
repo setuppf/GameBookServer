@@ -9,7 +9,7 @@ RobotStateType RobotStateLoginConnectting::OnUpdate()
 {
     if (_pParentObj->IsConnected())
     {
-        return RobotState_Login_Connectted;
+        return RobotState_Login_Connected;
     }
 
     return GetState();
