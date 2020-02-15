@@ -49,7 +49,7 @@ class Network : public ThreadObject, public ISocketObject
 {
 public:
     void Dispose() override;
-    void RegisterMsgFuntion() override;
+    void RegisterMsgFunction() override;
     SOCKET GetSocket() override { return _masterSocket; }
     void SendPacket(Packet*);
     bool IsBroadcast() { return _isBroadcast; }

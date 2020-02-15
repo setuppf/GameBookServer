@@ -6,7 +6,7 @@
 
 class RobotMgr : public NetworkConnector {
 public:
-    void RegisterMsgFuntion() override;
+    void RegisterMsgFunction() override;
     bool Init() override;
     void Update() override;
 

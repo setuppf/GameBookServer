@@ -16,6 +16,7 @@
 #if ENGINE_PLATFORM != PLATFORM_WIN32
 #include <string.h>
 #include <stdint.h>
+#include <sys/time.h>
 #define engine_stricmp strcasecmp
 #define engine_access access
 #else

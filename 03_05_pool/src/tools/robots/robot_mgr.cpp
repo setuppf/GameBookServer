@@ -6,12 +6,12 @@
 #include "global_robots.h"
 #include <sstream>
 
-void RobotMgr::RegisterMsgFuntion()
+void RobotMgr::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
     AttachCallBackHander(pMsgCallBack);
 
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
 }
 
 bool RobotMgr::Init()

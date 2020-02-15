@@ -30,7 +30,7 @@ class Console : public ThreadObject
 {
 public:
 	bool Init() override;
-	void RegisterMsgFuntion() override;
+	void RegisterMsgFunction() override;
 	void Update() override;
 	void Dispose() override;
 
