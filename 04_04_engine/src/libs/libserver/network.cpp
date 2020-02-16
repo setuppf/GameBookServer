@@ -34,7 +34,7 @@ void Network::RegisterMsgFuntion()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
     AttachCallBackHander(pMsgCallBack);
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_NetworkDisconnectToNet, BindFunP1(this, &Network::HandleDisconnect));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkDisconnectToNet, BindFunP1(this, &Network::HandleDisconnect));
 }
 
 #ifndef WIN32
