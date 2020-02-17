@@ -53,10 +53,10 @@ struct DynamicCall<0>
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void CreateComponentC::RegisterMsgFuntion()
+void CreateComponentC::RegisterMsgFunction()
 {
     auto pMsg = new MessageCallBackFunction();
-    this->AttachCallBackHander(pMsg);
+    this->AttachCallBackHandler(pMsg);
     pMsg->RegisterFunction(Proto::MsgId::MI_CreateComponent, BindFunP1(this, &CreateComponentC::HandleCreateComponent));
     pMsg->RegisterFunction(Proto::MsgId::MI_RemoveComponent, BindFunP1(this, &CreateComponentC::HandleRemoveComponent));
 }

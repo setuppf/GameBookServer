@@ -51,7 +51,7 @@ class Network : public Entity<Network>, public IMessageSystem, public INetwork
 {
 public:
     void BackToPool() override;
-    void RegisterMsgFuntion() override;
+    void RegisterMsgFunction() override;
     SOCKET GetSocket() override { return _masterSocket; }
     void SendPacket(Packet*& pPacket) override;
     bool IsBroadcast() { return _isBroadcast; }

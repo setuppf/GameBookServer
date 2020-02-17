@@ -11,12 +11,12 @@ void RobotMgr::AwakeFromPool()
     this->Connect("127.0.0.1", 2233);
 }
 
-void RobotMgr::RegisterMsgFuntion()
+void RobotMgr::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHander(pMsgCallBack);
+    AttachCallBackHandler(pMsgCallBack);
 
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
 }
 
 void RobotMgr::Update()

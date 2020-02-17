@@ -11,7 +11,7 @@ IMessageSystem::~IMessageSystem()
 	}
 }
 
-void IMessageSystem::AttachCallBackHander(MessageCallBackFunctionInfo* pCallback)
+void IMessageSystem::AttachCallBackHandler(MessageCallBackFunctionInfo* pCallback)
 {
 	_pCallBackFuns = pCallback;
 }

@@ -8,7 +8,7 @@ class RobotMgr : public NetworkConnector, public IAwakeFromPoolSystem<>
 {
 public:
     void AwakeFromPool() override;
-    void RegisterMsgFuntion() override;    
+    void RegisterMsgFunction() override;    
     void Update() override;
 
     void ShowInfo();

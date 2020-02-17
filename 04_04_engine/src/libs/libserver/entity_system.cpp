@@ -74,7 +74,7 @@ void EntitySystem::AddToSystem(IComponent* pComponent)
     const auto objMsg = dynamic_cast<IMessageSystem*>(pComponent);
     if (objMsg != nullptr)
     {
-        objMsg->RegisterMsgFuntion();
+        objMsg->RegisterMsgFunction();
         _messageSystems.emplace_back(objMsg);
     }
 }
