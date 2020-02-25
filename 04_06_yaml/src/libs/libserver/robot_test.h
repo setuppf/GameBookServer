@@ -6,7 +6,7 @@ class RobotTest :public Component<RobotTest>, public IMessageSystem, public IAwa
 {
 public:
     void AwakeFromPool() override { };
-    void RegisterMsgFuntion() override;
+    void RegisterMsgFunction() override;
     void BackToPool() override {};
 
 private:

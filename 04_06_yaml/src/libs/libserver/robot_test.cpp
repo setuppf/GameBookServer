@@ -4,13 +4,13 @@
 
 #include <iostream>
 
-void RobotTest::RegisterMsgFuntion()
+void RobotTest::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHander(pMsgCallBack);
+    AttachCallBackHandler(pMsgCallBack);
 
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_RobotTestBegin, BindFunP1(this, &RobotTest::HandleTestBegin));
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_RobotTestEnd, BindFunP1(this, &RobotTest::HandleTestEnd));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotTestBegin, BindFunP1(this, &RobotTest::HandleTestBegin));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotTestEnd, BindFunP1(this, &RobotTest::HandleTestEnd));
 }
 
 void RobotTest::HandleTestBegin(Packet* pPacket)

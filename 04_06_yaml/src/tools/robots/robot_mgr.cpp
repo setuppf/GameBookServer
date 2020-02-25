@@ -15,12 +15,12 @@ void RobotMgr::AwakeFromPool()
 	this->Connect(pLoginConfig->Ip, pLoginConfig->Port);
 }
 
-void RobotMgr::RegisterMsgFuntion()
+void RobotMgr::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHander(pMsgCallBack);
+    AttachCallBackHandler(pMsgCallBack);
 
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
 }
 
 void RobotMgr::Update()
