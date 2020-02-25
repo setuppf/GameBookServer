@@ -8,7 +8,7 @@ class Account :public Component<Account>, public IMessageSystem, public IAwakeFr
 {
 public:
     void AwakeFromPool() override {}
-    void RegisterMsgFuntion() override;
+    void RegisterMsgFunction() override;
     virtual void BackToPool() override;
 
 private:

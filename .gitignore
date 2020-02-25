@@ -264,3 +264,8 @@
 /04_06_yaml/src/tools/robots/Makefile
 /04_06_yaml/src/tools/robots/cmake_install.cmake
 /04_06_yaml/src/tools/robots/CMakeCache.txt
+/04_07_log4/.vs/engine/v16
+/04_07_log4/src/libs/libserver/CMakeFiles
+/04_07_log4/src/libs/libserver/Makefile
+/04_07_log4/src/libs/libserver/cmake_install.cmake
+/04_07_log4/src/libs/libserver/CMakeCache.txt
