@@ -48,7 +48,7 @@ class MysqlConnector : public MysqlBase, public Entity<MysqlConnector>, public I
 public:
 	void AwakeFromPool() override;
 	void BackToPool() override;
-    void RegisterMsgFuntion() override;
+    void RegisterMsgFunction() override;
 
 	bool Connect();
 	void Disconnect() override;

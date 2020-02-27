@@ -30,11 +30,11 @@ void Network::Clean()
 }
 
 
-void Network::RegisterMsgFuntion()
+void Network::RegisterMsgFunction()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
-    AttachCallBackHander(pMsgCallBack);
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_NetworkRequestDisconnect, BindFunP1(this, &Network::HandleDisconnect));
+    AttachCallBackHandler(pMsgCallBack);
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkRequestDisconnect, BindFunP1(this, &Network::HandleDisconnect));
 }
 
 #ifndef WIN32

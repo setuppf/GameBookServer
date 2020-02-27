@@ -7,9 +7,9 @@ class IMessageSystem :virtual public ISystem
 {
 public:
 	~IMessageSystem();
-	virtual void RegisterMsgFuntion() = 0;
+	virtual void RegisterMsgFunction() = 0;
 
-	void AttachCallBackHander(MessageCallBackFunctionInfo* pCallback);
+	void AttachCallBackHandler(MessageCallBackFunctionInfo* pCallback);
 	bool IsFollowMsgId(Packet* packet) const;
 	void ProcessPacket(Packet* packet) const;
 

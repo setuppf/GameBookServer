@@ -2,17 +2,17 @@
 
 #include "robot_state.h"
 
-class RobotStateLoginConnectting : public RobotState {
+class RobotStateLoginConnecting : public RobotState {
 public:
-    DynamicStateCreate(RobotStateLoginConnectting, RobotState_Login_Connectting);
+    DynamicStateCreate(RobotStateLoginConnecting, RobotState_Login_Connecting);
 
     void OnEnterState() override;
     RobotStateType OnUpdate() override;
 };
 
-class RobotStateLoginConnectted : public RobotState {
+class RobotStateLoginConnected : public RobotState {
 public:
-    DynamicStateCreate( RobotStateLoginConnectted, RobotState_Login_Connectted );
+    DynamicStateCreate( RobotStateLoginConnected, RobotState_Login_Connected );
 
     void OnEnterState( ) override;
 };
