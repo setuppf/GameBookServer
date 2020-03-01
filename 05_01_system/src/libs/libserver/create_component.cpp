@@ -59,8 +59,8 @@ void CreateComponentC::AwakeFromPool()
     auto pMsgCallBack = new MessageCallBackFunction();
     AddComponent<MessageComponent>(pMsgCallBack);
 
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_CreateComponent, BindFunP1(this, &CreateComponentC::HandleCreateComponent));
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_RemoveComponent, BindFunP1(this, &CreateComponentC::HandleRemoveComponent));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_CreateComponent, BindFunP1(this, &CreateComponentC::HandleCreateComponent));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RemoveComponent, BindFunP1(this, &CreateComponentC::HandleRemoveComponent));
 }
 
 void CreateComponentC::BackToPool()

@@ -20,7 +20,7 @@ void Robot::AwakeFromPool(std::string account)
     _account = account;
     _isBroadcast = false;
 
-    InitStateTemplateMgr(RobotStateType::RobotState_Login_Connectting);
+    InitStateTemplateMgr(RobotStateType::RobotState_Login_Connecting);
 
     // message    
     auto pMsgCallBack = new MessageCallBackFunctionFilterObj<Robot>();
@@ -32,8 +32,8 @@ void Robot::AwakeFromPool(std::string account)
 
         return nullptr;
     };
-    pMsgCallBack->RegisterFuntionWithObj(Proto::MsgId::C2L_AccountCheckRs, BindFunP2(this, &Robot::HandleAccountCheckRs));
-    pMsgCallBack->RegisterFuntionWithObj(Proto::MsgId::L2C_PlayerList, BindFunP2(this, &Robot::HandlePlayerList));
+    pMsgCallBack->RegisterFunctionWithObj(Proto::MsgId::C2L_AccountCheckRs, BindFunP2(this, &Robot::HandleAccountCheckRs));
+    pMsgCallBack->RegisterFunctionWithObj(Proto::MsgId::L2C_PlayerList, BindFunP2(this, &Robot::HandlePlayerList));
 
     // update
     auto pUpdateComponent = AddComponent<UpdateComponent>();
@@ -58,8 +58,8 @@ std::string Robot::GetAccount() const
 
 void Robot::RegisterState()
 {
-    RegisterStateClass(RobotStateType::RobotState_Login_Connectting, DynamicStateBind(RobotStateLoginConnectting));
-    RegisterStateClass(RobotStateType::RobotState_Login_Connectted, DynamicStateBind(RobotStateLoginConnectted));
+    RegisterStateClass(RobotStateType::RobotState_Login_Connecting, DynamicStateBind(RobotStateLoginConnecting));
+    RegisterStateClass(RobotStateType::RobotState_Login_Connected, DynamicStateBind(RobotStateLoginConnected));
     RegisterStateClass(RobotStateType::RobotState_Login_Logined, DynamicStateBind(RobotStateLoginLogined));
     RegisterStateClass(RobotStateType::RobotState_Login_SelectPlayer, DynamicStateBind(RobotStateLoginSelectPlayer));
 }
