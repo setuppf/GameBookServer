@@ -21,4 +21,3 @@ protected:
     static void SendPacket(Packet* packet, APP_TYPE appType, int appId = 0);
     static void SendPacket(Packet* pPacket);
 };
-

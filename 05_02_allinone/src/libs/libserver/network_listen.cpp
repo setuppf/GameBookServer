@@ -18,7 +18,7 @@ void NetworkListen::AwakeFromPool(std::string ip, int port)
     // message
     auto pMsgCallBack = new MessageCallBackFunction();
     AddComponent<MessageComponent>(pMsgCallBack);    
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_NetworkRequestDisconnect, BindFunP1(this, &NetworkListen::HandleDisconnect));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_NetworkRequestDisconnect, BindFunP1(this, &NetworkListen::HandleDisconnect));
 
     // update
     auto pUpdateComponent = AddComponent<UpdateComponent>();

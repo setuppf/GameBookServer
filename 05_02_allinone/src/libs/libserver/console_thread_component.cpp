@@ -12,7 +12,7 @@ void ConsoleThreadComponent::AwakeFromPool()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
     AddComponent<MessageComponent>(pMsgCallBack);
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_CmdShowThreadEntites, BindFunP1(this, &ConsoleThreadComponent::HandleCmdShowThreadEntites));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_CmdShowThreadEntites, BindFunP1(this, &ConsoleThreadComponent::HandleCmdShowThreadEntites));
 }
 
 void ConsoleThreadComponent::BackToPool()

@@ -9,11 +9,11 @@ void MysqlConnector::InitMessageComponent()
     auto pMsgCallBack = new MessageCallBackFunction();
     AddComponent<MessageComponent>(pMsgCallBack);
 
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::L2DB_QueryPlayerList, BindFunP1(this, &MysqlConnector::HandleQueryPlayerList));
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::L2DB_CreatePlayer, BindFunP1(this, &MysqlConnector::HandleCreatePlayer));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::L2DB_QueryPlayerList, BindFunP1(this, &MysqlConnector::HandleQueryPlayerList));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::L2DB_CreatePlayer, BindFunP1(this, &MysqlConnector::HandleCreatePlayer));
 
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::G2DB_SavePlayer, BindFunP1(this, &MysqlConnector::HandleSavePlayer));
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::G2DB_QueryPlayer, BindFunP1(this, &MysqlConnector::HandleQueryPlayer));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::G2DB_SavePlayer, BindFunP1(this, &MysqlConnector::HandleSavePlayer));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::G2DB_QueryPlayer, BindFunP1(this, &MysqlConnector::HandleQueryPlayer));
 }
 
 void MysqlConnector::HandleQueryPlayerList(Packet* pPacket)
