@@ -20,7 +20,7 @@ void RobotMgr::Awake()
     // message
     auto pMsgCallBack = new MessageCallBackFunction();
     AddComponent<MessageComponent>(pMsgCallBack);
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
 
     // yaml
     auto pYaml = ComponentHelp::GetYaml();

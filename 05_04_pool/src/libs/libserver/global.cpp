@@ -38,11 +38,9 @@ void Global::UpdateTime()
     gettimeofday(&tv, nullptr);
     TimeTick = tv.tv_sec * 1000 + tv.tv_usec * 0.001;
 #else
-    TimeTick = GetTickCount64();
+    auto timeValue = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::system_clock::now());
+    TimeTick = timeValue.time_since_epoch().count();
 #endif
-
-    //auto timeValue = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::system_clock::now());
-    //TimeTick = timeValue.time_since_epoch().count();
 
 //#if ENGINE_PLATFORM != PLATFORM_WIN32
 //    auto tt = std::chrono::system_clock::to_time_t(timeValue);

@@ -15,7 +15,7 @@ class DynamicObjectPoolCollector : public IDisposable
 {
 public:
     DynamicObjectPoolCollector(SystemManager* pSys);
-    void Dispose();
+    void Dispose() override;
 
     template<class T>
     IDynamicObjectPool* GetPool();
