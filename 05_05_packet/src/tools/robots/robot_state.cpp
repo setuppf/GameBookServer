@@ -8,11 +8,11 @@
 RobotStateType RobotState::Update()
 {
     const auto state = GetState();
-    if (state > RobotState_Login_Connectting && state != RobotState_Game_Connectting)
+    if (state > RobotState_Login_Connecting && state != RobotState_Game_Connecting)
     {
         if (!_pParentObj->IsConnected())
         {
-            return RobotState_Login_Connectting;
+            return RobotState_Login_Connecting;
         }
     }
 

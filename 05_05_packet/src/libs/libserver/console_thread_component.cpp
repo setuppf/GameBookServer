@@ -15,7 +15,7 @@ void ConsoleThreadComponent::Awake(ThreadType iType)
 
     auto pMsgCallBack = new MessageCallBackFunction();
     AddComponent<MessageComponent>(pMsgCallBack);
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_CmdThread, BindFunP1(this, &ConsoleThreadComponent::HandleCmdThread));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_CmdThread, BindFunP1(this, &ConsoleThreadComponent::HandleCmdThread));
 }
 
 void ConsoleThreadComponent::BackToPool()

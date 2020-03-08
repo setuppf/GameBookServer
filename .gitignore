@@ -389,3 +389,13 @@
 /05_04_pool/src/tools/robots/Makefile
 /05_04_pool/src/tools/robots/cmake_install.cmake
 /05_04_pool/src/tools/robots/CMakeCache.txt
+/05_05_packet/.vs/engine/v16
+/05_05_packet/src/libs/libserver/CMakeFiles
+/05_05_packet/libs
+/05_05_packet/src/apps/allinone/CMakeFiles
+/05_05_packet/src/apps/allinone/Makefile
+/05_05_packet/src/apps/allinone/cmake_install.cmake
+/05_05_packet/src/apps/allinone/CMakeCache.txt
+/05_05_packet/src/libs/libserver/Makefile
+/05_05_packet/src/libs/libserver/cmake_install.cmake
+/05_05_packet/src/libs/libserver/CMakeCache.txt
