@@ -4,7 +4,7 @@
 #include "packet.h"
 #include "thread_mgr.h"
 
-void MessageCallBackFunction::RegisterFuntion(int msgId, HandleFunction function)
+void MessageCallBackFunction::RegisterFunction(int msgId, HandleFunction function)
 {
      _callbackHandle[msgId] = function;
 }

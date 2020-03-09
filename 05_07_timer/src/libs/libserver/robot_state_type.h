@@ -4,15 +4,15 @@ enum RobotStateType
 {
     RobotState_HttpRequest = 0,		// http请求
 
-    RobotState_Login_Connectting,	// 正在链接 Login
-    RobotState_Login_Connectted,	// 链接成功
+    RobotState_Login_Connecting,	// 正在链接 Login
+    RobotState_Login_Connected,	// 链接成功
     RobotState_Login_Logined,       // 登录成功
 
     //RobotState_Login_CreatePlayer,   // 创建角色
     RobotState_Login_SelectPlayer,   // 选择角色
 
-    RobotState_Game_Connectting,	// 正在链接 Game
-    RobotState_Game_Connectted,	    // 链接成功
+    RobotState_Game_Connecting,	// 正在链接 Game
+    RobotState_Game_Connected,	    // 链接成功
     RobotState_Game_Logined,        // 登录成功
 
     RobotState_Space_EnterWorld,     // 进入地图
@@ -22,16 +22,15 @@ enum RobotStateType
 
 const char RobotStateTypeName[][255] = {
     "[     ] HttpRequest :",
-    "[Login] Connectting :",
-
-    "[Login] Connectted  :",
+    "[Login] Connecting :",
+    "[Login] Connected  :",
     "[Login] Logined     :",
 
     //"[Login] CreatePlayer:",
     "[Login] SelectPlayer:",
 
-    "[Game ] Connectting :",
-    "[Game ] Connectted  :",
+    "[Game ] Connecting :",
+    "[Game ] Connected  :",
     "[Game ] Logined     :",
 
     "[Space] EnterWorld  :",
@@ -40,14 +39,14 @@ const char RobotStateTypeName[][255] = {
 const char RobotStateTypeShortName[][255] = {
     "HttpRequest",
 
-    "Login-Connectting",
-    "Login-Connectted",
+    "Login-Connecting",
+    "Login-Connected",
     "Login-Logined",
     //"Login-CreatePlayer",
     "Login-SelectPlayer",
 
-    "Game-Connectting",
-    "Game-Connectted",
+    "Game-Connecting",
+    "Game-Connected",
     "Game-Logined",
 
     "Space-EnterWorld",

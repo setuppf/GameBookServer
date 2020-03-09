@@ -42,7 +42,6 @@ void Global::UpdateTime()
     TimeTick = timeValue.time_since_epoch().count();
 #endif
 
-
 //#if ENGINE_PLATFORM != PLATFORM_WIN32
 //    auto tt = std::chrono::system_clock::to_time_t(timeValue);
 //    struct tm* ptm = localtime(&tt);
