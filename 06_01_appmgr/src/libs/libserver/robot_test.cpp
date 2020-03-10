@@ -10,8 +10,8 @@ void RobotTest::Awake()
     auto pMsgCallBack = new MessageCallBackFunction();
     AddComponent<MessageComponent>(pMsgCallBack);
 
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_RobotTestBegin, BindFunP1(this, &RobotTest::HandleTestBegin));
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_RobotTestEnd, BindFunP1(this, &RobotTest::HandleTestEnd));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotTestBegin, BindFunP1(this, &RobotTest::HandleTestBegin));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_RobotTestEnd, BindFunP1(this, &RobotTest::HandleTestEnd));
 }
 
 void RobotTest::HandleTestBegin(Packet* pPacket)

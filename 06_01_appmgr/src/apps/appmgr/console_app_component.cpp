@@ -7,7 +7,7 @@ void ConsoleAppComponent::Awake()
 {
     auto pMsgCallBack = new MessageCallBackFunction();
     AddComponent<MessageComponent>(pMsgCallBack);
-    pMsgCallBack->RegisterFuntion(Proto::MsgId::MI_CmdApp, BindFunP1(this, &ConsoleAppComponent::HandleCmdApp));
+    pMsgCallBack->RegisterFunction(Proto::MsgId::MI_CmdApp, BindFunP1(this, &ConsoleAppComponent::HandleCmdApp));
 }
 
 void ConsoleAppComponent::BackToPool()
