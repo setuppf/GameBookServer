@@ -3,10 +3,10 @@
 #include "robot_state.h"
 #include <string>
 
-class RobotStateHttpConnectting : public RobotState
+class RobotStateHttpConnecting : public RobotState
 {
 public:
-    DynamicStateCreate(RobotStateHttpConnectting, RobotStateType::Http_Connecting);
+    DynamicStateCreate(RobotStateHttpConnecting, RobotStateType::Http_Connecting);
 
     void OnEnterState() override;
     RobotStateType OnUpdate() override;
@@ -17,10 +17,10 @@ private:
     std::string _method{ "" };
 };
 
-class RobotStateHttpConnectted : public RobotState
+class RobotStateHttpConnected : public RobotState
 {
 public:
-    DynamicStateCreate(RobotStateHttpConnectted, RobotStateType::Http_Connected);
+    DynamicStateCreate(RobotStateHttpConnected, RobotStateType::Http_Connected);
     void OnEnterState() override;
     RobotStateType OnUpdate() override;
 };

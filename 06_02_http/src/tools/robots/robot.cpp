@@ -66,11 +66,11 @@ std::string Robot::GetAccount() const
 
 void Robot::RegisterState()
 {
-    RegisterStateClass(RobotStateType::Http_Connecting, DynamicStateBind(RobotStateHttpConnectting));
-    RegisterStateClass(RobotStateType::Http_Connected, DynamicStateBind(RobotStateHttpConnectted));
+    RegisterStateClass(RobotStateType::Http_Connecting, DynamicStateBind(RobotStateHttpConnecting));
+    RegisterStateClass(RobotStateType::Http_Connected, DynamicStateBind(RobotStateHttpConnected));
 
-    RegisterStateClass(RobotStateType::Login_Connecting, DynamicStateBind(RobotStateLoginConnectting));
-    RegisterStateClass(RobotStateType::Login_Connected, DynamicStateBind(RobotStateLoginConnectted));
+    RegisterStateClass(RobotStateType::Login_Connecting, DynamicStateBind(RobotStateLoginConnecting));
+    RegisterStateClass(RobotStateType::Login_Connected, DynamicStateBind(RobotStateLoginConnected));
     RegisterStateClass(RobotStateType::Login_Logined, DynamicStateBind(RobotStateLoginLogined));
     RegisterStateClass(RobotStateType::Login_SelectPlayer, DynamicStateBind(RobotStateLoginSelectPlayer));
 }

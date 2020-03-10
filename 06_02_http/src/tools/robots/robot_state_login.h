@@ -3,17 +3,17 @@
 #include "robot_state.h"
 #include "libserver/common.h"
 
-class RobotStateLoginConnectting : public RobotState {
+class RobotStateLoginConnecting : public RobotState {
 public:
-    DynamicStateCreate(RobotStateLoginConnectting, RobotStateType::Login_Connecting);
+    DynamicStateCreate(RobotStateLoginConnecting, RobotStateType::Login_Connecting);
 
     void OnEnterState() override;
     RobotStateType OnUpdate() override;
 };
 
-class RobotStateLoginConnectted : public RobotState {
+class RobotStateLoginConnected : public RobotState {
 public:
-    DynamicStateCreate( RobotStateLoginConnectted, RobotStateType::Login_Connected );
+    DynamicStateCreate( RobotStateLoginConnected, RobotStateType::Login_Connected );
 
     void OnEnterState( ) override;
     RobotStateType OnUpdate() override;

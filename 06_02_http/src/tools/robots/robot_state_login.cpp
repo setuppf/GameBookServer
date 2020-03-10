@@ -3,12 +3,12 @@
 #include "libserver/message_system_help.h"
 #include "libserver/component_help.h"
 
-void RobotStateLoginConnectting::OnEnterState()
+void RobotStateLoginConnecting::OnEnterState()
 {
     _pParentObj->ConnectToLogin();
 }
 
-RobotStateType RobotStateLoginConnectting::OnUpdate()
+RobotStateType RobotStateLoginConnecting::OnUpdate()
 {
     auto socketKey = _pParentObj->GetSocketKey();
     if (socketKey.Socket != INVALID_SOCKET && socketKey.NetType == NetworkType::TcpConnector)
@@ -19,7 +19,7 @@ RobotStateType RobotStateLoginConnectting::OnUpdate()
     return GetState();
 }
 
-void RobotStateLoginConnectted::OnEnterState()
+void RobotStateLoginConnected::OnEnterState()
 {
     Proto::AccountCheck accountCheck;
     accountCheck.set_account(_pParentObj->GetAccount().c_str());
@@ -37,7 +37,7 @@ void RobotStateLoginConnectted::OnEnterState()
 #endif
 }
 
-RobotStateType RobotStateLoginConnectted::OnUpdate()
+RobotStateType RobotStateLoginConnected::OnUpdate()
 {
     return GetState();
 }

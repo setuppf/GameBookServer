@@ -472,3 +472,13 @@
 /06_01_appmgr/src/tools/robots/Makefile
 /06_01_appmgr/src/tools/robots/cmake_install.cmake
 /06_01_appmgr/src/tools/robots/CMakeCache.txt
+/06_02_http/.vs/engine/v16
+/06_02_http/libs
+/06_02_http/src/apps/allinone/CMakeFiles
+/06_02_http/src/apps/allinone/Makefile
+/06_02_http/src/apps/allinone/cmake_install.cmake
+/06_02_http/src/apps/allinone/CMakeCache.txt
+/06_02_http/src/libs/libserver/CMakeFiles
+/06_02_http/src/libs/libserver/Makefile
+/06_02_http/src/libs/libserver/cmake_install.cmake
+/06_02_http/src/libs/libserver/CMakeCache.txt

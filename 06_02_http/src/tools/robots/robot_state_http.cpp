@@ -3,7 +3,7 @@
 #include "libserver/message_system_help.h"
 #include "libserver/component_help.h"
 
-void RobotStateHttpConnectting::OnEnterState()
+void RobotStateHttpConnecting::OnEnterState()
 {
     Proto::NetworkConnect protoConn;
     protoConn.set_network_type((int)NetworkType::HttpConnector);
@@ -23,7 +23,7 @@ void RobotStateHttpConnectting::OnEnterState()
     MessageSystemHelp::DispatchPacket(Proto::MsgId::MI_NetworkConnect, protoConn, nullptr);
 }
 
-RobotStateType RobotStateHttpConnectting::OnUpdate()
+RobotStateType RobotStateHttpConnecting::OnUpdate()
 {
     auto socketKey = _pParentObj->GetSocketKey();
     if (socketKey.Socket != INVALID_SOCKET) 
@@ -40,7 +40,7 @@ RobotStateType RobotStateHttpConnectting::OnUpdate()
     return GetState();
 }
 
-void RobotStateHttpConnectted::OnEnterState()
+void RobotStateHttpConnected::OnEnterState()
 {
 #ifdef LOG_TRACE_COMPONENT_OPEN
     std::stringstream traceMsg;
@@ -53,7 +53,7 @@ void RobotStateHttpConnectted::OnEnterState()
 #endif
 }
 
-RobotStateType RobotStateHttpConnectted::OnUpdate()
+RobotStateType RobotStateHttpConnected::OnUpdate()
 {
     return GetState();
 }
