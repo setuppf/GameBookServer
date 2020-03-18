@@ -38,7 +38,7 @@ void WorldOperatorComponent::HandleCreateWorld(Packet* pPacket)
     }
 
     // 如果 requestWorldSn == 0，广播给所有game, appmgr
-    // 如果 requestWorldSn != 0，则广播给指定的 worldproxy 和 appmgr
+    // 如果 requestWorldSn != 0，则广播给指定的game和appmgr
     Proto::BroadcastCreateWorld protoRs;
     protoRs.set_world_id(worldId);
     protoRs.set_world_sn(worldSn);
@@ -47,28 +47,28 @@ void WorldOperatorComponent::HandleCreateWorld(Packet* pPacket)
 
     if ((Global::GetInstance()->GetCurAppType() & APP_APPMGR) == 0)
     {
-        // 本进程中不包括 AppMgr, 向AppMgr发送消息
+        // 本进程中不包括 appmgr, 向 appmgr 发送消息
         MessageSystemHelp::SendPacket(Proto::MsgId::MI_BroadcastCreateWorld, protoRs, APP_APPMGR);
     }
 
-    // 本进程中不包括 AppGame
+    // 本进程中不包括 appmgr
     if ((Global::GetInstance()->GetCurAppType() & APP_GAME) == 0)
     {
         if (requestWorldSn == 0)
         {
-            // 向所有Game进程发送数据
+            // 向所有 game 进程发送数据
             MessageSystemHelp::SendPacketToAllApp(Proto::MsgId::MI_BroadcastCreateWorld, protoRs, APP_GAME);
         }
         else
         {
-            // 向指定Game发送数据
+            // 向指定 game 发送数据
             MessageSystemHelp::SendPacket(Proto::MsgId::MI_BroadcastCreateWorld, pPacket, protoRs);
         }
     }
 
     if ((Global::GetInstance()->GetCurAppType() & APP_GAME) != 0 || (Global::GetInstance()->GetCurAppType() & APP_APPMGR) != 0)
     {
-        // 本进程中包括了AppGame AppMgr其中一个，需要中转消息
+        // 本进程中包括了 game appmgr 其中一个，需要中转消息
         MessageSystemHelp::DispatchPacket(Proto::MsgId::MI_BroadcastCreateWorld, protoRs, nullptr);
     }
 }

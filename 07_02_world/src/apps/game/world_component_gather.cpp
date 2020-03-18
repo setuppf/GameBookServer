@@ -6,7 +6,7 @@
 
 void WorldComponentGather::Awake()
 {
-    AddTimer(0, 10, false, 0, BindFunP0(this, &WorldComponentGather::SyncWorldInfoToGather));
+    AddTimer(0, 10, true, 1, BindFunP0(this, &WorldComponentGather::SyncWorldInfoToGather));
 }
 
 void WorldComponentGather::BackToPool()

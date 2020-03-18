@@ -125,7 +125,7 @@ void Lobby::HandleQueryPlayerRs(Packet* pPacket)
     // 进入公共地图
     pLastMap = pPlayerLastMap->GetLastPublicMap();
     const auto lastMapSn = pWorldLocator->GetWorldSnById(pLastMap->WorldId);
-    if (lastMapSn != INVALID_ID)
+    if (lastMapSn > 0)
     {
         // 存在公共地图，跳转
         WorldProxyHelp::Teleport(pPlayer, GetSN(), lastMapSn);
