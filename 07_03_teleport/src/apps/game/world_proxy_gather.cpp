@@ -6,6 +6,7 @@
 #include "libserver/global.h"
 
 #include <numeric>
+#include "libresource/resource_help.h"
 
 void WorldProxyGather::Awake()
 {
@@ -42,11 +43,25 @@ void WorldProxyGather::HandleCmdWorldProxy(Packet* pPacket)
 {
     LOG_DEBUG("------------------------------------");
     LOG_DEBUG("**** world proxy gather ****");
+
+    const auto pResMgr = ResourceHelp::GetResourceManager();
     for (auto one : _maps)
     {
+        const auto pWorldRes = pResMgr->Worlds->GetResource(one.second.WorldId);
+        std::string worldName = "";
+        if (pWorldRes != nullptr)
+        {
+            worldName = pWorldRes->GetName();
+        }
+        else
+        {
+            worldName = "lobby";
+        }
+
         LOG_DEBUG("sn:" << one.first
             << " proxy sn:" << one.second.WorldProxySn
-            << " online:" << one.second.Online);
+            << " online:" << one.second.Online
+            << " name:" << worldName.c_str());
     }
 }
 

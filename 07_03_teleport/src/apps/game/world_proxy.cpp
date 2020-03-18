@@ -9,15 +9,17 @@
 #include "libplayer/player_collector_component.h"
 #include "libplayer/player.h"
 #include "libserver/log4.h"
+#include "world_component_gather.h"
 
 void WorldProxy::Awake(int worldId, uint64 lastWorldSn)
 {
     _spaceAppId = Global::GetAppIdFromSN(_sn);
     LOG_DEBUG("create world proxy. world id:" << worldId << " sn:" << _sn << " space app id:" << _spaceAppId);
 
-    AddComponent<PlayerCollectorComponent>();
-
     _worldId = worldId;
+
+    AddComponent<PlayerCollectorComponent>();
+    AddComponent<WorldComponentGather>();
 
     auto pProxyLocator = ComponentHelp::GetGlobalEntitySystem()->GetComponent<WorldProxyLocator>();
     pProxyLocator->RegisterToLocator(_worldId, GetSN());

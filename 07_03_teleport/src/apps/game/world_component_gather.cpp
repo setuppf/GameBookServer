@@ -6,7 +6,7 @@
 
 void WorldComponentGather::Awake()
 {
-    AddTimer(0, 10, false, 0, BindFunP0(this, &WorldComponentGather::SyncWorldInfoToGather));
+    AddTimer(0, 10, true, 1, BindFunP0(this, &WorldComponentGather::SyncWorldInfoToGather));
 }
 
 void WorldComponentGather::BackToPool()
@@ -16,10 +16,12 @@ void WorldComponentGather::BackToPool()
 
 void WorldComponentGather::SyncWorldInfoToGather() const
 {
+    const auto pWorld = GetParent();
+
     Proto::WorldProxySyncToGather proto;
-    proto.set_world_sn(GetSN());
-    proto.set_world_proxy_sn(GetSN());
-    proto.set_world_id(dynamic_cast<IWorld*>(_parent)->GetWorldId());
+    proto.set_world_sn(pWorld->GetSN());
+    proto.set_world_proxy_sn(pWorld->GetSN());
+    proto.set_world_id(dynamic_cast<IWorld*>(pWorld)->GetWorldId());
 
     const int online = _parent->GetComponent<PlayerCollectorComponent>()->OnlineSize();
     proto.set_online(online);
