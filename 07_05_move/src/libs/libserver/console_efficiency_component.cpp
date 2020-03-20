@@ -57,12 +57,13 @@ void ConsoleEfficiencyComponent::HandleCmdEfficiency(Packet* pPacket)
         log << pair.first << "\t";
         log << GetThreadTypeName(pair.second.ThreadTypeKey) << "\t";
         log << pair.second.UpdateTime << "\t";
-        log << 1000 / pair.second.UpdateTime << "\t";
         log << pair.second.UpdateTimeMax << "\t";
+        if (pair.second.UpdateTime > 0)
+            log << 1000 / pair.second.UpdateTime << "\t";
+        else
+            log << 1000 / 1 << "\t";
+        
         log << timeutil::ToString(pair.second.LastRecvTime);
-
-        auto msg = log.str();
-        const int off = static_cast<int>(log.tellp());
-        std::cout << std::string(msg.data(), off) << std::endl;
+        std::cout << log.str().c_str() << std::endl;
     }
 }

@@ -44,12 +44,15 @@ void WorldProxyGather::HandleCmdWorldProxy(Packet* pPacket)
     LOG_DEBUG("------------------------------------");
     LOG_DEBUG("**** world proxy gather ****");
 
-    auto pResMgr = ResourceHelp::GetResourceManager();
+    const auto pResMgr = ResourceHelp::GetResourceManager();
     for (auto one : _maps)
     {
+        const auto pWorldRes = pResMgr->Worlds->GetResource(one.second.WorldId);
         LOG_DEBUG("sn:" << one.first
+            << " proxy sn:" << one.second.WorldSn
             << " online:" << one.second.Online
-            << " world:" << pResMgr->Worlds->GetResource(one.second.WorldId)->GetName().c_str());
+            << " online:" << one.second.Online
+            << " name:" << pWorldRes->GetName().c_str());
     }
 }
 
