@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="network.h">
+      <Filter>entity\network</Filter>
+    </ClInclude>
+    <ClInclude Include="network_buffer.h">
+      <Filter>entity\network\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="network_connector.h">
+      <Filter>entity\network</Filter>
+    </ClInclude>
+    <ClInclude Include="network_listen.h">
+      <Filter>entity\network</Filter>
+    </ClInclude>
+    <ClInclude Include="connect_obj.h">
+      <Filter>entity\network\connect_obj</Filter>
+    </ClInclude>
+    <ClInclude Include="thread.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="thread_mgr.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="server_app.h">
+      <Filter>server\app</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\msg.pb.h">
+      <Filter>ecs\system\message\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\proto_id.pb.h">
+      <Filter>ecs\system\message\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>entity\console</Filter>
+    </ClInclude>
+    <ClInclude Include="base_buffer.h">
+      <Filter>entity\network\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_state_type.h">
+      <Filter>server\robots</Filter>
+    </ClInclude>
+    <ClInclude Include="cache_refresh.h">
+      <Filter>ecs\cache</Filter>
+    </ClInclude>
+    <ClInclude Include="cache_swap.h">
+      <Filter>ecs\cache</Filter>
+    </ClInclude>
+    <ClInclude Include="object_pool.h">
+      <Filter>entity\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="object_pool_interface.h">
+      <Filter>entity\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="component_factory.h">
+      <Filter>ecs\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="create_component.h">
+      <Filter>entity\create</Filter>
+    </ClInclude>
+    <ClInclude Include="system.h">
+      <Filter>ecs\system</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>ecs\system\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>ecs\system\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="entity_system.h">
+      <Filter>ecs\system\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="message_system.h">
+      <Filter>ecs\system\message</Filter>
+    </ClInclude>
+    <ClInclude Include="regist_to_factory.h">
+      <Filter>ecs\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="network_locator.h">
+      <Filter>entity\network\locator</Filter>
+    </ClInclude>
+    <ClInclude Include="log4.h">
+      <Filter>common\log4</Filter>
+    </ClInclude>
+    <ClInclude Include="log4_help.h">
+      <Filter>common\log4</Filter>
+    </ClInclude>
+    <ClInclude Include="yaml.h">
+      <Filter>common\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="res_path.h">
+      <Filter>common\res_path</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>common\global</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="disposable.h">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="sn_object.h">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="state_template.h">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="util_string.h">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="util_time.h">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\db.pb.h">
+      <Filter>ecs\system\message\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="component_collections.h">
+      <Filter>ecs\system\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="system_manager.h">
+      <Filter>ecs\system</Filter>
+    </ClInclude>
+    <ClInclude Include="message_system_help.h">
+      <Filter>ecs\system\message</Filter>
+    </ClInclude>
+    <ClInclude Include="update_component.h">
+      <Filter>ecs\system\update</Filter>
+    </ClInclude>
+    <ClInclude Include="update_system.h">
+      <Filter>ecs\system\update</Filter>
+    </ClInclude>
+    <ClInclude Include="thread_collector.h">
+      <Filter>thread\collector</Filter>
+    </ClInclude>
+    <ClInclude Include="thread_type.h">
+      <Filter>thread\collector</Filter>
+    </ClInclude>
+    <ClInclude Include="console_cmd_thread.h">
+      <Filter>entity\console\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="console_thread_component.h">
+      <Filter>entity\console\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="object_pool_collector.h">
+      <Filter>entity\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="object_pool_packet.h">
+      <Filter>entity\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="thread_collector_exclusive.h">
+      <Filter>thread\collector</Filter>
+    </ClInclude>
+    <ClInclude Include="component_help.h">
+      <Filter>ecs\system\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="app_type.h">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="packet.h">
+      <Filter>entity\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="timer_component.h">
+      <Filter>ecs\timer</Filter>
+    </ClInclude>
+    <ClInclude Include="sync_component.h">
+      <Filter>server\app</Filter>
+    </ClInclude>
+    <ClInclude Include="mongoose\mongoose.h">
+      <Filter>entity\network\mongoose</Filter>
+    </ClInclude>
+    <ClInclude Include="trace_component.h">
+      <Filter>entity\console\trace</Filter>
+    </ClInclude>
+    <ClInclude Include="console_cmd_trace.h">
+      <Filter>entity\console\trace</Filter>
+    </ClInclude>
+    <ClInclude Include="network_type.h">
+      <Filter>entity\network</Filter>
+    </ClInclude>
+    <ClInclude Include="network_help.h">
+      <Filter>entity\network</Filter>
+    </ClInclude>
+    <ClInclude Include="socket_object.h">
+      <Filter>entity\network\identify</Filter>
+    </ClInclude>
+    <ClInclude Include="check_time_component.h">
+      <Filter>server\robots</Filter>
+    </ClInclude>
+    <ClInclude Include="message_callback.h">
+      <Filter>ecs\system\message</Filter>
+    </ClInclude>
+    <ClInclude Include="redis_connector.h">
+      <Filter>entity\redis</Filter>
+    </ClInclude>
+    <ClInclude Include="redis_constants.h">
+      <Filter>entity\redis</Filter>
+    </ClInclude>
+    <ClInclude Include="vector3.h">
+      <Filter>common\math</Filter>
+    </ClInclude>
+    <ClInclude Include="console_cmd_app.h">
+      <Filter>entity\console</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="network.cpp">
+      <Filter>entity\network</Filter>
+    </ClCompile>
+    <ClCompile Include="network_buffer.cpp">
+      <Filter>entity\network\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="network_listen.cpp">
+      <Filter>entity\network</Filter>
+    </ClCompile>
+    <ClCompile Include="connect_obj.cpp">
+      <Filter>entity\network\connect_obj</Filter>
+    </ClCompile>
+    <ClCompile Include="thread.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="thread_mgr.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="server_app.cpp">
+      <Filter>server\app</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\msg.pb.cc">
+      <Filter>ecs\system\message\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\proto_id.pb.cc">
+      <Filter>ecs\system\message\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>entity\console</Filter>
+    </ClCompile>
+    <ClCompile Include="base_buffer.cpp">
+      <Filter>entity\network\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="network_connector.cpp">
+      <Filter>entity\network</Filter>
+    </ClCompile>
+    <ClCompile Include="create_component.cpp">
+      <Filter>entity\create</Filter>
+    </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>ecs\system\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>ecs\system\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="entity_system.cpp">
+      <Filter>ecs\system\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="message_system.cpp">
+      <Filter>ecs\system\message</Filter>
+    </ClCompile>
+    <ClCompile Include="network_locator.cpp">
+      <Filter>entity\network\locator</Filter>
+    </ClCompile>
+    <ClCompile Include="log4.cpp">
+      <Filter>common\log4</Filter>
+    </ClCompile>
+    <ClCompile Include="log4_help.cpp">
+      <Filter>common\log4</Filter>
+    </ClCompile>
+    <ClCompile Include="yaml.cpp">
+      <Filter>common\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="res_path.cpp">
+      <Filter>common\res_path</Filter>
+    </ClCompile>
+    <ClCompile Include="global.cpp">
+      <Filter>common\global</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\db.pb.cc">
+      <Filter>ecs\system\message\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="component_collections.cpp">
+      <Filter>ecs\system\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="system_manager.cpp">
+      <Filter>ecs\system</Filter>
+    </ClCompile>
+    <ClCompile Include="message_system_help.cpp">
+      <Filter>ecs\system\message</Filter>
+    </ClCompile>
+    <ClCompile Include="update_component.cpp">
+      <Filter>ecs\system\update</Filter>
+    </ClCompile>
+    <ClCompile Include="update_system.cpp">
+      <Filter>ecs\system\update</Filter>
+    </ClCompile>
+    <ClCompile Include="thread_collector.cpp">
+      <Filter>thread\collector</Filter>
+    </ClCompile>
+    <ClCompile Include="console_cmd_thread.cpp">
+      <Filter>entity\console\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="console_thread_component.cpp">
+      <Filter>entity\console\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="object_pool_collector.cpp">
+      <Filter>entity\pool</Filter>
+    </ClCompile>
+    <ClCompile Include="object_pool_packet.cpp">
+      <Filter>entity\pool</Filter>
+    </ClCompile>
+    <ClCompile Include="thread_collector_exclusive.cpp">
+      <Filter>thread\collector</Filter>
+    </ClCompile>
+    <ClCompile Include="component_help.cpp">
+      <Filter>ecs\system\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="sn_object.cpp">
+      <Filter>common\base</Filter>
+    </ClCompile>
+    <ClCompile Include="packet.cpp">
+      <Filter>entity\network\packet</Filter>
+    </ClCompile>
+    <ClCompile Include="timer_component.cpp">
+      <Filter>ecs\timer</Filter>
+    </ClCompile>
+    <ClCompile Include="sync_component.cpp">
+      <Filter>server\app</Filter>
+    </ClCompile>
+    <ClCompile Include="mongoose\mongoose.c">
+      <Filter>entity\network\mongoose</Filter>
+    </ClCompile>
+    <ClCompile Include="util_string.cpp">
+      <Filter>common\base</Filter>
+    </ClCompile>
+    <ClCompile Include="trace_component.cpp">
+      <Filter>entity\console\trace</Filter>
+    </ClCompile>
+    <ClCompile Include="console_cmd_trace.cpp">
+      <Filter>entity\console\trace</Filter>
+    </ClCompile>
+    <ClCompile Include="socket_object.cpp">
+      <Filter>entity\network\identify</Filter>
+    </ClCompile>
+    <ClCompile Include="check_time_component.cpp">
+      <Filter>server\robots</Filter>
+    </ClCompile>
+    <ClCompile Include="message_callback.cpp">
+      <Filter>ecs\system\message</Filter>
+    </ClCompile>
+    <ClCompile Include="redis_connector.cpp">
+      <Filter>entity\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="vector3.cpp">
+      <Filter>common\math</Filter>
+    </ClCompile>
+    <ClCompile Include="console_cmd_app.cpp">
+      <Filter>entity\console</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{d189b5ff-9d0e-43ba-8d63-e64fb2a6e8ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server">
+      <UniqueIdentifier>{e38215ae-009a-40b7-a05a-f960af16ec40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\app">
+      <UniqueIdentifier>{4191aecb-0a65-4525-a576-2a01985eedfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\robots">
+      <UniqueIdentifier>{a02d3dab-c0e7-4743-9e54-aca75e41eab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs">
+      <UniqueIdentifier>{63835dd9-0632-4927-adcc-0b6c65810946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\factory">
+      <UniqueIdentifier>{ce6a7c16-3e26-450c-b92a-8f68a0b956f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity">
+      <UniqueIdentifier>{641a2f3f-5992-435d-93b9-75a1478b1a89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\network">
+      <UniqueIdentifier>{175c5e8c-712b-4f98-8fe2-9ec8925e560d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\network\buffer">
+      <UniqueIdentifier>{45e1e476-bc5b-4630-8804-510363871c41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\network\connect_obj">
+      <UniqueIdentifier>{a49c6797-1391-44f7-8562-9dd2a2ef2ac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\console">
+      <UniqueIdentifier>{638fac00-f522-4b1b-b45a-01fe042de45c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\cache">
+      <UniqueIdentifier>{c48c9ce3-66ea-4f29-94e1-215d7a5c072c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\create">
+      <UniqueIdentifier>{0517ef10-8c91-4cbc-8c5d-9b6b3b846ebb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\system">
+      <UniqueIdentifier>{9f2aa449-e788-4142-8291-aa1f2bf1fbba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\system\entity">
+      <UniqueIdentifier>{6c389f45-cf3a-4eaf-8b75-344f15109d0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\system\message">
+      <UniqueIdentifier>{d618ce8a-a701-47e3-823a-61f17e82d8e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\system\message\protobuf">
+      <UniqueIdentifier>{8abb53a7-e381-4b51-a631-a1cf019c89c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\system\message\protobuf\proto">
+      <UniqueIdentifier>{f649b8a2-7573-4108-b540-ba047070f59b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\network\locator">
+      <UniqueIdentifier>{8261de6d-b019-416b-a976-56d07de1adf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\global">
+      <UniqueIdentifier>{3bfabaa4-306a-4b3a-a3fd-d594b5161b53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\log4">
+      <UniqueIdentifier>{a2dde0be-9634-4351-9736-ebc7375ace65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\res_path">
+      <UniqueIdentifier>{91c52d19-5b0b-4cc9-9b2e-8fdd0653decd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\yaml">
+      <UniqueIdentifier>{2cce1509-5d39-4dfb-a3e1-b3861ed7b002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\base">
+      <UniqueIdentifier>{0b7ff889-b19b-43ab-a63e-50a9c661dcbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thread">
+      <UniqueIdentifier>{b924c834-403d-4eb0-8e52-7e6d15601855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\system\update">
+      <UniqueIdentifier>{d16fb338-775e-42b3-9e6f-2bb45967a7ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thread\collector">
+      <UniqueIdentifier>{2a938f27-7286-45d9-86bb-7b5c0973c109}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\console\thread">
+      <UniqueIdentifier>{2222be98-7c6d-485d-987a-36985ce5396e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\pool">
+      <UniqueIdentifier>{d5ccb2d0-253c-4e90-b028-696f9ec02a07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\network\packet">
+      <UniqueIdentifier>{d365c51e-ae1e-407e-8300-65e19c8a91c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs\timer">
+      <UniqueIdentifier>{5c68a91c-06df-44e3-b5d0-fccd004293aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\network\mongoose">
+      <UniqueIdentifier>{dbe5797e-7e1b-41bf-a1a4-30533b4d5918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\console\trace">
+      <UniqueIdentifier>{5e1486bd-00e0-4334-bc9f-db2000b96097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\network\identify">
+      <UniqueIdentifier>{e9b762e2-5d1f-4bb9-a7e0-a5266f9b8d4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity\redis">
+      <UniqueIdentifier>{ec71c0d6-2d4f-4009-b94f-383cfc0a3d90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\math">
+      <UniqueIdentifier>{831d3610-3e6d-42b1-b68b-36acaaaff84a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="protobuf\msg.proto">
+      <Filter>ecs\system\message\protobuf\proto</Filter>
+    </None>
+    <None Include="protobuf\proto_id.proto">
+      <Filter>ecs\system\message\protobuf\proto</Filter>
+    </None>
+    <None Include="protobuf\db.proto">
+      <Filter>ecs\system\message\protobuf\proto</Filter>
+    </None>
+  </ItemGroup>
+</Project>

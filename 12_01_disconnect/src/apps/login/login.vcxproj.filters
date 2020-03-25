@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="account.cpp">
+      <Filter>account</Filter>
+    </ClCompile>
+    <ClCompile Include="player_component_account.cpp">
+      <Filter>player</Filter>
+    </ClCompile>
+    <ClCompile Include="redis_login.cpp">
+      <Filter>redis</Filter>
+    </ClCompile>
+    <ClCompile Include="player_component_onlineinlogin.cpp">
+      <Filter>player</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="account.h">
+      <Filter>account</Filter>
+    </ClInclude>
+    <ClInclude Include="login.h" />
+    <ClInclude Include="player_component_account.h">
+      <Filter>player</Filter>
+    </ClInclude>
+    <ClInclude Include="redis_login.h">
+      <Filter>redis</Filter>
+    </ClInclude>
+    <ClInclude Include="player_component_onlineinlogin.h">
+      <Filter>player</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="account">
+      <UniqueIdentifier>{0dfe626d-acb4-43c1-8441-0da017a0ef87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player">
+      <UniqueIdentifier>{0517c336-f3a3-4e81-aa5b-3775bb260e69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="redis">
+      <UniqueIdentifier>{937de94e-b89e-4452-9459-f01b3d0cf733}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

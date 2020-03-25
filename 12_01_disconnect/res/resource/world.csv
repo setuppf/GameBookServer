@@ -1,0 +1,5 @@
+Id,Name,Init,Type,AbPath,ResName,UiResType,PlayerInitPos
+1,login,0,1,scenes/login,Login,1,-1
+2,roles,0,2,scenes/roles,Roles,2,-1
+3,jiangxia,1,3,scenes/jiangxia,jiangxia,0,"369.78,29.35,493.20"
+4,dungeon02,0,4,scenes/jiangxia,jiangxia,0,"369.78,29.35,493.20"
