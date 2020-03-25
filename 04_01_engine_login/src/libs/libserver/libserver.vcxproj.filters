@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="network.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network_buffer.h">
+      <Filter>network\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="network_connector.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network_listen.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="packet.h">
+      <Filter>network\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="connect_obj.h">
+      <Filter>network\connect_obj</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="sn_object.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h" />
+    <ClInclude Include="common.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="thread_obj.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="thread.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="disposable.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="thread_mgr.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="server_app.h">
+      <Filter>server\app</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\msg.pb.h">
+      <Filter>message\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\proto_id.pb.h">
+      <Filter>message\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="message_list.h">
+      <Filter>message</Filter>
+    </ClInclude>
+    <ClInclude Include="socket_object.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="state_template.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="util_string.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>console</Filter>
+    </ClInclude>
+    <ClInclude Include="base_buffer.h">
+      <Filter>network\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_state_type.h">
+      <Filter>server\robot</Filter>
+    </ClInclude>
+    <ClInclude Include="robot_test.h">
+      <Filter>server\robot</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="network.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network_buffer.cpp">
+      <Filter>network\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="network_connector.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network_listen.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="connect_obj.cpp">
+      <Filter>network\connect_obj</Filter>
+    </ClCompile>
+    <ClCompile Include="global.cpp" />
+    <ClCompile Include="thread_obj.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="thread.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="thread_mgr.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="server_app.cpp">
+      <Filter>server\app</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\msg.pb.cc">
+      <Filter>message\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\proto_id.pb.cc">
+      <Filter>message\protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="message_list.cpp">
+      <Filter>message</Filter>
+    </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>console</Filter>
+    </ClCompile>
+    <ClCompile Include="packet.cpp">
+      <Filter>network\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="base_buffer.cpp">
+      <Filter>network\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_test.cpp">
+      <Filter>server\robot</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="thread">
+      <UniqueIdentifier>{b924c834-403d-4eb0-8e52-7e6d15601855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{d189b5ff-9d0e-43ba-8d63-e64fb2a6e8ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{175c5e8c-712b-4f98-8fe2-9ec8925e560d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network\buffer">
+      <UniqueIdentifier>{45e1e476-bc5b-4630-8804-510363871c41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network\connect_obj">
+      <UniqueIdentifier>{a49c6797-1391-44f7-8562-9dd2a2ef2ac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{8bf5c4c2-4691-44d0-8407-e771c23085ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server">
+      <UniqueIdentifier>{e38215ae-009a-40b7-a05a-f960af16ec40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\app">
+      <UniqueIdentifier>{4191aecb-0a65-4525-a576-2a01985eedfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="message">
+      <UniqueIdentifier>{9d71cd89-e3be-4e1f-abf8-1aadfd05652f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="message\protobuf">
+      <UniqueIdentifier>{8abb53a7-e381-4b51-a631-a1cf019c89c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="message\protobuf\proto">
+      <UniqueIdentifier>{f649b8a2-7573-4108-b540-ba047070f59b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="console">
+      <UniqueIdentifier>{638fac00-f522-4b1b-b45a-01fe042de45c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server\robot">
+      <UniqueIdentifier>{44b11efe-28c7-4d08-a12d-1a83177a698b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="protobuf\msg.proto">
+      <Filter>message\protobuf\proto</Filter>
+    </None>
+    <None Include="protobuf\proto_id.proto">
+      <Filter>message\protobuf\proto</Filter>
+    </None>
+  </ItemGroup>
+</Project>

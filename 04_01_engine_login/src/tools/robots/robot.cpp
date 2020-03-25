@@ -1,0 +1,67 @@
+#include "robot.h"
+
+#include "robot_state_login.h"
+
+#include "libserver/common.h"
+#include "libserver/packet.h"
+#include "libserver/robot_state_type.h"
+
+Robot::Robot(std::string account)
+{
+    _account = account;
+}
+
+bool Robot::Init()
+{
+    if (!NetworkConnector::Init())
+        return false;
+
+    InitStateTemplateMgr(RobotStateType::RobotState_Login_Connecting);    
+    this->Connect("127.0.0.1", 2233);
+    return true;
+}
+
+void Robot::RegisterMsgFunction()
+{
+    NetworkConnector::RegisterMsgFunction();
+    RegisterFunction(Proto::MsgId::C2L_AccountCheckRs, BindFunP1(this, &Robot::HandleAccountCheckRs));
+}
+
+void Robot::Update()
+{
+    NetworkConnector::Update();
+    UpdateState();
+}
+
+std::string Robot::GetAccount() const
+{
+    return _account;
+}
+
+void Robot::RegisterState()
+{
+    RegisterStateClass(RobotStateType::RobotState_Login_Connecting, DynamicStateBind(RobotStateLoginConnecting));
+    RegisterStateClass(RobotStateType::RobotState_Login_Connected, DynamicStateBind(RobotStateLoginConnected));
+    RegisterStateClass(RobotStateType::RobotState_Login_Logined, DynamicStateBind(RobotStateLoginLogined));
+}
+
+void Robot::HandleAccountCheckRs(Packet* pPacket)
+{
+    Proto::AccountCheckRs proto = pPacket->ParseToProto<Proto::AccountCheckRs>();
+    std::cout << "account check result account:" << _account << " code:" << proto.return_code() << std::endl;
+
+    if (proto.return_code() == Proto::AccountCheckRs::ARC_OK)
+        ChangeState(RobotStateType::RobotState_Login_Logined);
+}
+
+
+void Robot::SendMsgAccountCheck()
+{
+    Proto::AccountCheck accountCheck;
+    accountCheck.set_account(GetAccount());
+    accountCheck.set_password("e10adc3949ba59abbe56e057f20f883e");
+
+    auto pPacket = new Packet(Proto::MsgId::C2L_AccountCheck, GetSocket());
+    pPacket->SerializeToBuffer(accountCheck);
+    SendPacket(pPacket);
+}
