@@ -13,11 +13,12 @@ public:
 
 private:
     void HandleRobotState(Packet* pPacket);
-    void NotifyServer(RobotStateType iType);
+    void NotifyServer();
 
 private:
     std::chrono::system_clock::time_point _start;
     bool _isChange{ false };
+    RobotStateType _curType{ RobotStateType::Http_Connecting };
 
     // <account, RobotStateType>
     std::map<std::string, RobotStateType> _robots;
