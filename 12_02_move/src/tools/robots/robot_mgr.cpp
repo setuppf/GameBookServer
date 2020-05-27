@@ -11,9 +11,11 @@
 
 void RobotMgr::Awake()
 {
+    _curType = RobotStateType::Http_Connecting;
+
     // message
     auto pMsgSystem = GetSystemManager()->GetMessageSystem();
-    
+
     pMsgSystem->RegisterFunction(this, Proto::MsgId::MI_RobotSyncState, BindFunP1(this, &RobotMgr::HandleRobotState));
 
     AddTimer(0, 2, false, 0, BindFunP0(this, &RobotMgr::ShowInfo));
@@ -34,44 +36,42 @@ void RobotMgr::HandleRobotState(Packet* pPacket)
         _start = std::chrono::system_clock::now();
     }
 
-    RobotStateType iType = RobotStateType::Space_EnterWorld;
     for (int index = 0; index < protoState.states_size(); index++)
     {
         auto proto = protoState.states(index);
         const auto account = proto.account();
         _robots[account] = RobotStateType(proto.state());
-        if (_robots[account] < iType)
-        {
-            iType = _robots[account];
-        }
     }
 
     _isChange = true;
-    NotifyServer(iType);
+    NotifyServer();
 }
 
-void RobotMgr::NotifyServer(RobotStateType iType)
+void RobotMgr::NotifyServer()
 {
     if (_robots.size() != GlobalRobots::GetInstance()->GetRobotsCount())
         return;
 
-    auto iter = std::find_if(_robots.begin(), _robots.end(), [&iType](auto pair)
+    auto iter = std::find_if(_robots.begin(), _robots.end(), [this](auto pair)
         {
-            return pair.second < iType;
+            return pair.second < this->_curType;
         });
 
     if (iter == _robots.end())
     {
         auto end = std::chrono::system_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - _start);
-        auto stateName = GetRobotStateTypeShortName(iType);
+        auto stateName = GetRobotStateTypeShortName(_curType);
         std::cout << stateName << " over. time:" << double(duration.count()) * std::chrono::microseconds::period::num / std::chrono::microseconds::period::den << "s" << std::endl;
-
+        _curType = (RobotStateType)((int)_curType + 1);
     }
 }
 
 void RobotMgr::ShowInfo()
 {
+    if (_curType != RobotStateType::End)
+        return;
+
     if (!_isChange)
         return;
 

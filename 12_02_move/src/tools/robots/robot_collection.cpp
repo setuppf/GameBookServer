@@ -13,7 +13,7 @@
 void RobotCollection::Awake(std::string account, int min, int max)
 {
     // 创建的Robot不包括Max值 [min, max)
-    LOG_DEBUG("create robot. account:" << account.c_str() << " min:" << min << " max:" << max << " thread id:" << std::this_thread::get_id());
+    //LOG_DEBUG("create robot. account:" << account.c_str() << " min:" << min << " max:" << max << " thread id:" << std::this_thread::get_id());
     if (min == 0 && max == 0)
     {
         CreateRobot(account);
