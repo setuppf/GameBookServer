@@ -7,8 +7,8 @@ ServerApp::ServerApp(APP_TYPE  appType)
     _appType = appType;
 
     Global::Instance();
-    ThreadMgr::Instance();
-    _pThreadMgr = ThreadMgr::GetInstance();
+    _pThreadMgr = ThreadMgr::Instance();
+
     UpdateTime();
 
     // 创建线程
